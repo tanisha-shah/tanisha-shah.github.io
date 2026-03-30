@@ -5,7 +5,7 @@ import { Mail, Linkedin, Github, Send } from "lucide-react";
 
 const socials = [
   { icon: Mail, label: "tanisharshah06@gmail.com", href: "mailto:tanisharshah06@gmail.com" },
-  { icon: Linkedin, label: "LinkedIn — Tanisha Shah", href: "www.linkedin.com/in/tanisha-shah-3b58ba371" },
+  { icon: Linkedin, label: "LinkedIn — Tanisha Shah", href: "https://www.linkedin.com/in/tanisha-shah-3b58ba371/" },
   { icon: Github, label: "GitHub — tanisha-shah", href: "https://github.com/tanisha-shah" },
 ];
 
