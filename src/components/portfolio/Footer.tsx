@@ -8,7 +8,7 @@ const Footer = () => (
         <a href="https://github.com/tanisha-shah" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
           GitHub
         </a>
-        <a href="https://www.linkedin.com/in/tanisha-shah/" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+        <a href="https://www.linkedin.com/in/tanisha-shah-3b58ba371" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
           LinkedIn
         </a>
         <a href="mailto:tanisharshah06@gmail.com" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
