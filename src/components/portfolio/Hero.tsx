@@ -3,10 +3,10 @@ import { motion } from "framer-motion";
 import { ArrowDown, FileText } from "lucide-react";
 
 const roles = [
-  "Full-Stack Developer",
-  "AI & ML Explorer",
-  "Healthcare Tech Builder",
-  "Data-Driven Problem Solver",
+  "Curious Tech Learner",
+  "Problem Solver",
+  "Exploring AI & Systems",
+  "Building with Purpose",
 ];
 
 const Hero = () => {
