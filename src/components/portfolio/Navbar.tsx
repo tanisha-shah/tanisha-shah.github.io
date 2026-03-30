@@ -55,7 +55,7 @@ const Navbar = () => {
       >
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <a href="#" className="font-display text-xl font-bold tracking-tight text-foreground">
-            Tanisha<span className="text-gradient">.</span>
+            Tanisha<span className="text-gradient">Shah</span>
           </a>
 
           {/* Desktop */}
