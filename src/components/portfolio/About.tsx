@@ -24,21 +24,18 @@ const About = () => (
         <SectionReveal delay={0.1}>
           <div className="space-y-5 text-muted-foreground leading-relaxed">
             <p>
-              I don't just build apps — I architect systems that work when the internet doesn't.
-              From designing offline-first EHR platforms for rural healthcare workers to engineering
-              AI chatbots that deliver public health guidance via SMS, I focus on technology that
-              reaches people who need it most.
+              I am a Computer Science student at Nirma University with a keen interest in understanding 
+              how systems work and translating ideas into practical, reliable solutions. I value clarity 
+              in thinking and enjoy approaching problems in a structured and thoughtful way.
             </p>
             <p>
-              As a Computer Science student at Nirma University, I've worked across the full stack —
-              React frontends, FastAPI/Node.js backends, PostgreSQL databases, and ML pipelines.
-              My research in Federated Learning explores how to train models without compromising
-              patient privacy.
+              Through my work, I have explored developing user-centric applications as well as solutions aimed at improving 
+              accessibility, including projects in healthcare and communication. I strive to keep my work simple, intuitive, 
+              and genuinely useful.
             </p>
             <p>
-              Whether it's scraping labor market data to visualize workforce transformations or
-              building resilient inventory systems with RBAC, I optimize for clarity, reliability,
-              and measurable impact.
+              I approach every opportunity as a chance to learn and grow, taking the time to understand problems thoroughly and 
+              working towards solutions that create meaningful impact.
             </p>
           </div>
         </SectionReveal>
