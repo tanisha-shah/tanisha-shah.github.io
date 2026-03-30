@@ -39,14 +39,14 @@ const Hero = () => {
       <div className="pointer-events-none absolute top-1/4 left-1/2 -translate-x-1/2 h-[500px] w-[600px] rounded-full opacity-20 blur-[120px]" style={{ background: "var(--gradient-primary)" }} />
 
       <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
-        <motion.p
+        {/* <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
           className="mb-4 text-sm font-medium tracking-widest uppercase text-primary"
         >
           Hi, I'm Tanisha Shah
-        </motion.p>
+        </motion.p> */}
 
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
@@ -54,9 +54,9 @@ const Hero = () => {
           transition={{ delay: 0.4, duration: 0.8 }}
           className="font-display text-5xl font-bold leading-tight tracking-tight text-foreground md:text-7xl"
         >
-          Engineering resilient systems
+          TANISHA SHAH
           <br />
-          <span className="text-gradient">that solve real problems</span>
+          <span className="text-gradient"></span>
         </motion.h1>
 
         <motion.div
@@ -75,8 +75,7 @@ const Hero = () => {
           transition={{ delay: 1 }}
           className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-muted-foreground"
         >
-          B.Tech CSE @ Nirma University · Building offline-first health tech, AI chatbots,
-          and data-driven platforms — with a focus on impact over hype.
+          B.Tech CSE @ Nirma University
         </motion.p>
 
         <motion.div
