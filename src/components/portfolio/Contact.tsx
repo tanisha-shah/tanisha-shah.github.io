@@ -4,9 +4,9 @@ import SectionReveal from "./SectionReveal";
 import { Mail, Linkedin, Github, Send } from "lucide-react";
 
 const socials = [
-  { icon: Mail, label: "tanisha.shah@example.com", href: "mailto:tanisha.shah@example.com" },
-  { icon: Linkedin, label: "LinkedIn — Tanisha Shah", href: "https://linkedin.com/in/tanisha-shah" },
-  { icon: Github, label: "GitHub — tanishashah", href: "https://github.com/tanishashah" },
+  { icon: Mail, label: "tanisharshah06@gmail.com", href: "mailto:tanisharshah06@gmail.com" },
+  { icon: Linkedin, label: "LinkedIn — Tanisha Shah", href: "www.linkedin.com/in/tanisha-shah-3b58ba371" },
+  { icon: Github, label: "GitHub — tanisha-shah", href: "https://github.com/tanisha-shah" },
 ];
 
 const Contact = () => {
