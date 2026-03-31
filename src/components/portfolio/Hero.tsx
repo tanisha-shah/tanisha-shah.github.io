@@ -91,7 +91,7 @@ const Hero = () => {
           >
             View Projects
             <ArrowDown size={16} />
-          </a>,
+          </a>
           <a
             href="/resume.pdf"
             download="resume.pdf"
