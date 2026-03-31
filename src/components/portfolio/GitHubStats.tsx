@@ -3,10 +3,10 @@ import SectionReveal from "./SectionReveal";
 import { Github, GitCommit, Star, GitFork } from "lucide-react";
 
 const stats = [
-  { icon: Github, label: "Repositories", value: "10+" },
-  { icon: GitCommit, label: "Contributions", value: "200+" },
-  { icon: Star, label: "Stars Earned", value: "20+" },
-  { icon: GitFork, label: "Forks", value: "10+" },
+  { icon: Github, label: "Repositories", value: "5+" },
+  { icon: GitCommit, label: "Contributions", value: "60+" }
+  // { icon: Star, label: "Stars Earned", value: ""},
+  // { icon: GitFork, label: "Forks", value: "10+" },
 ];
 
 const languages = [
