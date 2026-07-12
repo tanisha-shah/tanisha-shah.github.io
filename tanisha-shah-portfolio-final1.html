@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Tanisha Shah — AI Engineer & Full Stack Developer</title>
+<meta name="description" content="Computer Engineering student at Nirma University specializing in AI research, federated learning, and full-stack development."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --bg:#0B1020; --surface:#111827; --surface2:#1a2235;
+  --accent:#5B8CFF; --accent2:#8B5CF6; --teal:#14B8A6;
+  --text:#F8FAFC; --muted:#94A3B8; --border:rgba(91,140,255,0.12);
+  --shadow:rgba(0,0,0,0.4); --card-hover-bg:#1a2235;
+  --serif:'DM Serif Display',Georgia,serif;
+  --sans:'Inter',system-ui,sans-serif;
+  --mono:'JetBrains Mono',monospace;
+}
+[data-theme="light"] {
+  --bg:#F8FAFC; --surface:#FFFFFF; --surface2:#F1F5F9;
+  --text:#0F172A; --muted:#64748B; --border:rgba(91,140,255,0.15);
+  --shadow:rgba(0,0,0,0.08); --card-hover-bg:#EFF6FF;
+}
+[data-theme="light"] .hero-grid { background-image:linear-gradient(rgba(91,140,255,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(91,140,255,0.06) 1px,transparent 1px); }
+[data-theme="light"] .hero-bg { background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(91,140,255,0.07) 0%,transparent 70%),radial-gradient(ellipse 60% 40% at 80% 80%,rgba(139,92,246,0.05) 0%,transparent 60%); }
+[data-theme="light"] nav { background:rgba(248,250,252,0.88); border-bottom:1px solid rgba(91,140,255,0.1); }
+[data-theme="light"] .mobile-menu { background:rgba(248,250,252,0.97); }
+[data-theme="light"] #research { background:var(--surface2); }
+[data-theme="light"] .research-card { background:var(--surface); }
+[data-theme="light"] .pv-cognisync { background:linear-gradient(135deg,#dbeafe,#eff6ff,#e0f2fe); }
+[data-theme="light"] .pv-labellens { background:linear-gradient(135deg,#d1fae5,#ecfdf5,#d1fae5); }
+[data-theme="light"] .pv-careerlens { background:linear-gradient(135deg,#ede9fe,#f5f3ff,#ddd6fe); }
+[data-theme="light"] .pv-medbot { background:linear-gradient(135deg,#fef3c7,#fffbeb,#fde68a); }
+[data-theme="light"] .pv-federated { background:linear-gradient(135deg,#dbeafe,#eff6ff,#cffafe); }
+[data-theme="light"] .pv-label { color:rgba(0,0,0,0.22); }
+[data-theme="light"] .pv-lines { background:repeating-linear-gradient(0deg,transparent,transparent 28px,rgba(0,0,0,0.025) 28px,rgba(0,0,0,0.025) 29px); }
+[data-theme="light"] .spotlight { background:radial-gradient(circle,rgba(91,140,255,0.07) 0%,transparent 70%); }
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.6;overflow-x:hidden;transition:background .3s,color .3s}
+svg{flex-shrink:0}
+
+#progress-bar{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2),var(--teal));width:0%;z-index:9999;transition:width .1s linear}
+
+.spotlight{pointer-events:none;position:fixed;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(91,140,255,0.055) 0%,transparent 70%);transform:translate(-50%,-50%);z-index:0;will-change:left,top;transition:opacity .3s}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 2rem;height:64px;display:flex;align-items:center;justify-content:space-between;background:rgba(11,16,32,0.78);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:background .3s,box-shadow .3s}
+.nav-logo{font-family:var(--serif);font-size:1.2rem;color:var(--text);text-decoration:none;letter-spacing:-.01em}
+.nav-logo span{color:var(--accent)}
+.nav-links{display:flex;align-items:center;gap:.25rem;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:.8rem;font-weight:500;letter-spacing:.02em;padding:.4rem .75rem;border-radius:6px;transition:color .2s,background .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--text);background:rgba(91,140,255,0.1)}
+.nav-cta{background:var(--accent)!important;color:#0B1020!important;font-weight:600!important;padding:.4rem 1rem!important;border-radius:6px}
+.nav-cta:hover{background:#7aa3ff!important}
+.theme-toggle{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:8px;border:1px solid var(--border);background:transparent;cursor:pointer;color:var(--muted);transition:all .2s;flex-shrink:0}
+.theme-toggle:hover{color:var(--text);border-color:rgba(91,140,255,0.3);background:rgba(91,140,255,0.06)}
+.hamburger{display:none;cursor:pointer;flex-direction:column;gap:5px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--muted);border-radius:2px;transition:.3s}
+.mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;background:rgba(11,16,32,0.97);backdrop-filter:blur(20px);padding:1.5rem 2rem;border-bottom:1px solid var(--border);z-index:99;flex-direction:column;gap:.5rem}
+.mobile-menu.open{display:flex}
+.mobile-menu a{color:var(--muted);text-decoration:none;font-size:.9rem;font-weight:500;padding:.6rem 0;border-bottom:1px solid var(--border);transition:color .2s}
+.mobile-menu a:last-child{border-bottom:none}
+.mobile-menu a:hover{color:var(--text)}
+
+section{padding:6rem 2rem;max-width:1100px;margin:0 auto}
+section.full-width{max-width:none}
+.section-label{font-family:var(--mono);font-size:.7rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.75rem;display:block}
+.section-title{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:400;line-height:1.15;color:var(--text);margin-bottom:1rem}
+.section-title .grad{background:linear-gradient(135deg,var(--accent) 0%,var(--accent2) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.section-sub{color:var(--muted);font-size:1rem;max-width:540px;line-height:1.7;margin-bottom:3rem}
+.divider{max-width:1100px;margin:0 auto;height:1px;background:var(--border)}
+
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+.reveal-delay-4{transition-delay:.4s}
+
+.btn-primary{display:inline-flex;align-items:center;gap:.5rem;background:var(--accent);color:#0B1020;font-weight:600;font-size:.875rem;padding:.7rem 1.5rem;border-radius:8px;text-decoration:none;border:none;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s;letter-spacing:.01em}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(91,140,255,0.35);background:#7aa3ff}
+.btn-secondary{display:inline-flex;align-items:center;gap:.5rem;background:transparent;color:var(--text);font-weight:500;font-size:.875rem;padding:.7rem 1.5rem;border-radius:8px;text-decoration:none;border:1px solid var(--border);cursor:pointer;transition:transform .2s,border-color .2s,background .2s}
+.btn-secondary:hover{transform:translateY(-2px);border-color:rgba(91,140,255,0.4);background:rgba(91,140,255,0.06)}
+.btn-case-study{display:inline-flex;align-items:center;gap:.4rem;font-size:.8rem;font-weight:600;color:#0B1020;background:var(--accent);padding:.45rem 1rem;border-radius:6px;text-decoration:none;border:none;cursor:pointer;transition:background .2s,transform .2s}
+.btn-case-study:hover{background:#7aa3ff;transform:translateY(-1px)}
+
+#hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding:6rem 2rem 4rem;max-width:none}
+.hero-bg{position:absolute;inset:0;z-index:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(91,140,255,0.08) 0%,transparent 70%),radial-gradient(ellipse 60% 40% at 80% 80%,rgba(139,92,246,0.06) 0%,transparent 60%),radial-gradient(ellipse 40% 40% at 20% 70%,rgba(20,184,166,0.05) 0%,transparent 60%)}
+.hero-grid{position:absolute;inset:0;z-index:0;background-image:linear-gradient(rgba(91,140,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(91,140,255,0.04) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 30%,transparent 100%)}
+.hero-content{position:relative;z-index:1}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--teal);margin-bottom:1.5rem;padding:.4rem 1rem;border:1px solid rgba(20,184,166,0.25);border-radius:100px;background:rgba(20,184,166,0.06)}
+.hero-eyebrow::before{content:'';display:block;width:6px;height:6px;border-radius:50%;background:var(--teal);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.8)}}
+.hero-name{font-family:var(--serif);font-size:clamp(3.5rem,9vw,7.5rem);font-weight:400;line-height:1;letter-spacing:-.02em;color:var(--text);margin-bottom:1rem;animation:fadeUp .9s ease .2s both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.hero-role-wrap{font-size:clamp(1rem,2.5vw,1.3rem);color:var(--muted);margin-bottom:1.25rem;animation:fadeUp .9s ease .35s both;min-height:2rem;display:flex;align-items:center;justify-content:center;gap:.5rem}
+.hero-role-switcher{color:var(--accent);font-weight:600;border-right:2px solid var(--accent);padding-right:3px;white-space:nowrap;overflow:hidden}
+.hero-tagline{font-size:clamp(.9rem,1.5vw,1rem);color:var(--muted);max-width:480px;margin:0 auto 2.5rem;line-height:1.7;animation:fadeUp .9s ease .5s both}
+.hero-actions{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:.75rem;margin-bottom:2.5rem;animation:fadeUp .9s ease .65s both}
+.hero-socials{display:flex;align-items:center;justify-content:center;gap:1.25rem;animation:fadeUp .9s ease .8s both}
+.hero-socials a{color:var(--muted);text-decoration:none;font-size:.8rem;font-weight:500;display:flex;align-items:center;gap:.4rem;transition:color .2s}
+.hero-socials a:hover{color:var(--text)}
+.hero-socials .dot{width:3px;height:3px;border-radius:50%;background:var(--border)}
+
+#about{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.about-story p{color:var(--muted);line-height:1.8;margin-bottom:1.25rem;font-size:.975rem}
+.about-story p:first-child{color:var(--text);font-size:1.05rem}
+
+.journey-constellation{position:relative;padding:1.5rem 0;margin-bottom:2rem}
+.constellation-track{display:flex;flex-direction:column;gap:0}
+.constellation-node{display:flex;align-items:stretch;gap:1.25rem;position:relative}
+.constellation-node:not(:last-child) .node-line{position:absolute;left:17px;top:38px;bottom:-1px;width:1px;background:linear-gradient(180deg,var(--accent) 0%,rgba(91,140,255,0.15) 100%)}
+.node-left{display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:36px}
+.node-orb{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.9rem;position:relative;z-index:1;flex-shrink:0;border:1px solid var(--border);background:var(--surface);transition:transform .3s,box-shadow .3s}
+.constellation-node:hover .node-orb{transform:scale(1.12);box-shadow:0 0 22px rgba(91,140,255,0.22)}
+.constellation-node:nth-child(1) .node-orb{border-color:rgba(91,140,255,0.4);background:rgba(91,140,255,0.08)}
+.constellation-node:nth-child(2) .node-orb{border-color:rgba(139,92,246,0.4);background:rgba(139,92,246,0.08)}
+.constellation-node:nth-child(3) .node-orb{border-color:rgba(20,184,166,0.4);background:rgba(20,184,166,0.08)}
+.constellation-node:nth-child(4) .node-orb{border-color:rgba(91,140,255,0.6);background:linear-gradient(135deg,rgba(91,140,255,0.12),rgba(139,92,246,0.12));box-shadow:0 0 14px rgba(91,140,255,0.15)}
+.node-body{padding:.5rem 0 1.5rem;flex:1}
+.node-label{font-size:.92rem;font-weight:600;color:var(--text);margin-bottom:.2rem;line-height:1.3}
+.node-desc{font-size:.78rem;color:var(--muted);line-height:1.5}
+
+.stats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.stat-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.2rem;text-align:center;transition:border-color .2s,transform .2s}
+.stat-card:hover{border-color:rgba(91,140,255,0.3);transform:translateY(-2px)}
+.stat-num{font-family:var(--serif);font-size:2rem;font-weight:400;line-height:1;margin-bottom:.25rem;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat-label{font-size:.72rem;color:var(--muted);letter-spacing:.05em}
+
+.learning-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.learning-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.5rem;transition:border-color .2s,transform .2s}
+.learning-card:hover{border-color:rgba(91,140,255,0.25);transform:translateY(-3px)}
+.learning-cat{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:.75rem}
+.learning-items{display:flex;flex-direction:column;gap:.5rem}
+.learning-item{font-size:.83rem;color:var(--muted);padding-left:.75rem;position:relative;line-height:1.5}
+.learning-item::before{content:'·';position:absolute;left:0;color:var(--accent);font-size:1rem;line-height:1.3}
+
+.project-card{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;margin-bottom:5rem}
+.project-card.reverse{direction:rtl}
+.project-card.reverse>*{direction:ltr}
+.project-visual{aspect-ratio:16/10;border-radius:12px;border:1px solid var(--border);overflow:hidden;position:relative;background:var(--surface);transition:transform .4s ease,box-shadow .4s ease;cursor:pointer}
+.project-visual:hover{transform:scale(1.02);box-shadow:0 20px 60px var(--shadow)}
+.project-visual-inner{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.75rem;color:var(--muted);position:relative;overflow:hidden}
+.pv-cognisync{background:linear-gradient(135deg,#0d1a3a,#0f2044,#0a1628)}
+.pv-labellens{background:linear-gradient(135deg,#0d2a1a,#0f3520,#0a1f12)}
+.pv-careerlens{background:linear-gradient(135deg,#1a0d2a,#220f35,#150a20)}
+.pv-medbot{background:linear-gradient(135deg,#2a1a0d,#35200f,#201508)}
+.pv-federated{background:linear-gradient(135deg,#0a1a2a,#0f2535,#071525)}
+.pv-icon{font-size:3.5rem;opacity:.5;position:absolute;bottom:1rem;right:1.5rem}
+.pv-label{position:absolute;top:1rem;left:1.25rem;font-family:var(--mono);font-size:.65rem;color:rgba(255,255,255,0.3);letter-spacing:.1em;text-transform:uppercase}
+.pv-lines{position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 28px,rgba(255,255,255,0.02) 28px,rgba(255,255,255,0.02) 29px)}
+.project-index{font-family:var(--mono);font-size:.65rem;color:var(--accent);letter-spacing:.15em;text-transform:uppercase;margin-bottom:.6rem}
+.project-title{font-family:var(--serif);font-size:clamp(1.4rem,3vw,2rem);font-weight:400;color:var(--text);margin-bottom:.5rem;line-height:1.2}
+.project-impact{font-size:.8rem;font-weight:600;color:var(--teal);letter-spacing:.03em;margin-bottom:.75rem;text-transform:uppercase}
+.project-desc{font-size:.9rem;color:var(--muted);line-height:1.7;margin-bottom:1.25rem}
+.tag-list{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.25rem}
+.tag{font-family:var(--mono);font-size:.65rem;color:var(--muted);background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:.25rem .6rem;letter-spacing:.05em;transition:color .2s,border-color .2s}
+.tag:hover{color:var(--text);border-color:rgba(91,140,255,0.3)}
+.project-links{display:flex;gap:.75rem;align-items:center;flex-wrap:wrap}
+.project-links a{font-size:.8rem;font-weight:600;color:var(--accent);text-decoration:none;display:flex;align-items:center;gap:.3rem;transition:color .2s}
+.project-links a:hover{color:var(--text)}
+
+.archive-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.archive-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.5rem;display:flex;flex-direction:column;gap:.75rem;transition:border-color .25s,transform .25s,background .25s;position:relative;overflow:hidden}
+.archive-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:0;transition:opacity .3s}
+.archive-card:hover{border-color:rgba(91,140,255,0.25);transform:translateY(-4px);background:var(--card-hover-bg)}
+.archive-card:hover::before{opacity:1}
+.archive-icon{font-size:1.5rem;margin-bottom:.25rem}
+.archive-title{font-size:1rem;font-weight:600;color:var(--text)}
+.archive-desc{font-size:.83rem;color:var(--muted);line-height:1.55;flex:1}
+.archive-tags{display:flex;flex-wrap:wrap;gap:.3rem}
+.archive-tag{font-family:var(--mono);font-size:.6rem;color:var(--muted);background:rgba(91,140,255,0.08);border:1px solid rgba(91,140,255,0.12);border-radius:3px;padding:.2rem .5rem;letter-spacing:.04em}
+.archive-link{font-size:.75rem;font-weight:600;color:var(--accent);text-decoration:none;display:inline-flex;align-items:center;gap:.3rem;transition:gap .2s}
+.archive-link:hover{gap:.5rem}
+
+#research{background:var(--surface);max-width:none;padding:6rem 2rem;transition:background .3s}
+#research .inner{max-width:1100px;margin:0 auto}
+.research-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1rem}
+.research-card{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:2rem;position:relative;overflow:hidden;transition:transform .3s,border-color .3s}
+.research-card.featured{background:linear-gradient(135deg,rgba(91,140,255,0.05),rgba(139,92,246,0.05));border-color:rgba(91,140,255,0.2)}
+.research-card:hover{transform:translateY(-3px);border-color:rgba(91,140,255,0.3)}
+.research-accent{position:absolute;top:0;left:0;width:3px;height:100%;background:linear-gradient(180deg,var(--accent),var(--accent2));border-radius:3px 0 0 3px}
+.research-accent.teal{background:linear-gradient(180deg,var(--teal),var(--accent))}
+.research-status{display:inline-flex;align-items:center;gap:.4rem;font-family:var(--mono);font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:1rem}
+.research-status.past{color:var(--muted)}
+.research-status .dot-live{width:6px;height:6px;border-radius:50%;background:var(--teal);animation:pulse 1.8s infinite}
+.research-status.past .dot-live{background:var(--muted);animation:none}
+.research-title{font-family:var(--serif);font-size:1.35rem;font-weight:400;color:var(--text);margin-bottom:.75rem;line-height:1.3}
+.research-desc{font-size:.875rem;color:var(--muted);line-height:1.7;margin-bottom:1rem}
+.research-highlight{font-family:var(--mono);font-size:.72rem;background:rgba(20,184,166,0.1);color:var(--teal);border:1px solid rgba(20,184,166,0.2);border-radius:6px;padding:.5rem .75rem;margin-bottom:1rem;display:inline-block}
+.research-methods{display:flex;flex-wrap:wrap;gap:.4rem}
+.method-tag{font-family:var(--mono);font-size:.62rem;color:var(--accent2);background:rgba(139,92,246,0.1);border:1px solid rgba(139,92,246,0.2);border-radius:4px;padding:.2rem .55rem;letter-spacing:.04em}
+.research-interests-wrap{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border)}
+.interests-label{font-family:var(--mono);font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:1.5rem;display:block}
+.interests-constellation{display:grid;grid-template-columns:repeat(4,1fr);gap:.85rem}
+.interest-node{position:relative;background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:1rem 1.1rem;cursor:default;transition:all .3s;overflow:hidden}
+.interest-node::before{content:'';position:absolute;inset:0;opacity:0;transition:opacity .3s;border-radius:inherit}
+.interest-node:hover{transform:translateY(-3px);border-color:var(--in-color,var(--accent));box-shadow:0 8px 30px rgba(0,0,0,0.2)}
+.interest-node:hover::before{opacity:1}
+.interest-node[data-color="blue"]{ --in-color:rgba(91,140,255,0.5)}
+.interest-node[data-color="blue"]::before{background:linear-gradient(135deg,rgba(91,140,255,0.07),transparent)}
+.interest-node[data-color="purple"]{ --in-color:rgba(139,92,246,0.5)}
+.interest-node[data-color="purple"]::before{background:linear-gradient(135deg,rgba(139,92,246,0.07),transparent)}
+.interest-node[data-color="teal"]{ --in-color:rgba(20,184,166,0.5)}
+.interest-node[data-color="teal"]::before{background:linear-gradient(135deg,rgba(20,184,166,0.07),transparent)}
+.in-icon{font-size:1.3rem;margin-bottom:.5rem;display:block}
+.in-label{font-size:.82rem;font-weight:600;color:var(--text);line-height:1.2;margin-bottom:.2rem}
+.in-sub{font-size:.68rem;color:var(--muted);line-height:1.4}
+.in-bar{height:2px;border-radius:2px;margin-top:.6rem;width:30%;transition:width .4s ease}
+.interest-node[data-color="blue"] .in-bar{background:linear-gradient(90deg,var(--accent),var(--accent2))}
+.interest-node[data-color="purple"] .in-bar{background:linear-gradient(90deg,var(--accent2),var(--teal))}
+.interest-node[data-color="teal"] .in-bar{background:linear-gradient(90deg,var(--teal),var(--accent))}
+.interest-node:hover .in-bar{width:70%}
+@media(max-width:900px){.interests-constellation{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.interests-constellation{grid-template-columns:1fr 1fr}}
+
+.hackathon-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-bottom:4rem}
+.hackathon-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.75rem;position:relative;overflow:hidden;transition:transform .3s,border-color .3s}
+.hackathon-card:hover{transform:translateY(-4px);border-color:rgba(91,140,255,0.3)}
+.hackathon-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));opacity:0;transition:opacity .3s}
+.hackathon-card:hover::after{opacity:1}
+.hackathon-badge{display:inline-flex;align-items:center;gap:.4rem;font-family:var(--mono);font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);background:rgba(91,140,255,0.1);border:1px solid rgba(91,140,255,0.2);border-radius:4px;padding:.25rem .6rem;margin-bottom:1rem}
+.hackathon-name{font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:.25rem}
+.hackathon-year{font-family:var(--mono);font-size:.72rem;color:var(--muted);margin-bottom:.75rem}
+.hackathon-desc{font-size:.83rem;color:var(--muted);line-height:1.6;margin-bottom:1rem}
+.hackathon-result{font-size:.8rem;font-weight:600;color:var(--teal);display:flex;align-items:center;gap:.4rem}
+.olympiad-title{font-family:var(--serif);font-size:1.5rem;font-weight:400;color:var(--text);margin-bottom:.5rem}
+.olympiad-sub{font-size:.85rem;color:var(--muted);margin-bottom:2rem}
+.olympiad-block{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:2rem;position:relative;overflow:hidden}
+.olympiad-block::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2),var(--teal))}
+.olympiad-rows{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.olympiad-col-head{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding-bottom:1rem;border-bottom:1px solid var(--border);margin-bottom:1rem}
+.olympiad-col-head span{color:var(--accent)}
+.olympiad-left{padding-right:2rem;border-right:1px solid var(--border)}
+.olympiad-right{padding-left:2rem}
+.olympiad-entry{display:flex;align-items:flex-start;gap:.75rem;padding:.75rem 0;border-bottom:1px solid var(--border);transition:background .2s}
+.olympiad-entry:last-child{border-bottom:none;padding-bottom:0}
+.olympiad-medal{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0;margin-top:.1rem}
+.medal-gold{background:rgba(251,191,36,0.12);border:1px solid rgba(251,191,36,0.25)}
+.medal-silver{background:rgba(148,163,184,0.12);border:1px solid rgba(148,163,184,0.25)}
+.medal-bronze{background:rgba(180,130,80,0.12);border:1px solid rgba(180,130,80,0.25)}
+.medal-cert{background:rgba(91,140,255,0.1);border:1px solid rgba(91,140,255,0.2)}
+.olympiad-entry-info{}
+.olympiad-entry-name{font-size:.88rem;font-weight:600;color:var(--text);line-height:1.3;margin-bottom:.15rem}
+.olympiad-entry-detail{font-size:.75rem;color:var(--muted);line-height:1.4}
+.olympiad-entry-badge{display:inline-flex;align-items:center;gap:.3rem;margin-top:.3rem;font-family:var(--mono);font-size:.58rem;letter-spacing:.06em;padding:.15rem .5rem;border-radius:3px}
+.badge-intl{color:var(--teal);background:rgba(20,184,166,0.1);border:1px solid rgba(20,184,166,0.2)}
+.badge-natl{color:var(--accent);background:rgba(91,140,255,0.1);border:1px solid rgba(91,140,255,0.15)}
+@media(max-width:700px){.olympiad-rows{grid-template-columns:1fr}.olympiad-left{padding-right:0;border-right:none;border-bottom:1px solid var(--border);padding-bottom:1.5rem;margin-bottom:1.5rem}.olympiad-right{padding-left:0}}
+
+.exp-timeline{position:relative;padding-left:2rem}
+.exp-timeline::before{content:'';position:absolute;left:0;top:8px;bottom:0;width:1px;background:var(--border)}
+.exp-item{position:relative;margin-bottom:2.5rem}
+.exp-item::before{content:'';position:absolute;left:-2rem;top:8px;width:10px;height:10px;border-radius:50%;background:var(--accent);border:2px solid var(--bg);box-shadow:0 0 0 1px var(--accent)}
+.exp-item.volunteer::before{background:var(--accent2);box-shadow:0 0 0 1px var(--accent2)}
+.exp-item.leadership::before{background:var(--teal);box-shadow:0 0 0 1px var(--teal)}
+.exp-meta{display:flex;align-items:center;gap:.75rem;margin-bottom:.3rem;flex-wrap:wrap}
+.exp-date{font-family:var(--mono);font-size:.68rem;color:var(--muted);letter-spacing:.08em}
+.exp-type{font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;padding:.15rem .5rem;border-radius:3px}
+.exp-type.intern{color:var(--accent);background:rgba(91,140,255,0.1)}
+.exp-type.volunteer{color:var(--accent2);background:rgba(139,92,246,0.1)}
+.exp-type.leadership{color:var(--teal);background:rgba(20,184,166,0.1)}
+.exp-role{font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:.15rem}
+.exp-org{font-size:.875rem;color:var(--muted);margin-bottom:.6rem}
+.exp-bullets{list-style:none;padding:0}
+.exp-bullets li{font-size:.875rem;color:var(--muted);line-height:1.6;padding-left:1rem;position:relative;margin-bottom:.3rem}
+.exp-bullets li::before{content:'–';position:absolute;left:0;color:var(--accent)}
+
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem}
+.cert-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.25rem 1.5rem;display:flex;flex-direction:column;gap:.5rem;transition:border-color .2s,transform .2s}
+.cert-card:hover{border-color:rgba(91,140,255,0.3);transform:translateY(-2px)}
+.cert-issuer{font-family:var(--mono);font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.cert-name{font-size:.92rem;font-weight:600;color:var(--text)}
+.cert-status{font-size:.72rem;color:var(--muted)}
+.cert-status.pursuing{color:var(--teal)}
+
+.tech-categories{display:flex;flex-direction:column;gap:2.5rem}
+.tech-cat-label{font-family:var(--mono);font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem}
+.tech-cat-label::after{content:'';flex:1;height:1px;background:var(--border)}
+.tech-chips{display:flex;flex-wrap:wrap;gap:.5rem}
+.tech-chip{display:inline-flex;align-items:center;gap:.5rem;padding:.45rem .9rem;background:var(--surface);border:1px solid var(--border);border-radius:8px;font-size:.83rem;font-weight:500;color:var(--text);cursor:default;transition:all .2s}
+.tech-chip:hover{border-color:rgba(91,140,255,0.4);background:rgba(91,140,255,0.06);transform:translateY(-1px)}
+.chip-icon{font-size:1rem}
+
+.github-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:2rem}
+.github-stat{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.25rem;text-align:center;transition:border-color .2s}
+.github-stat:hover{border-color:rgba(91,140,255,0.25)}
+.github-stat-num{font-family:var(--serif);font-size:1.75rem;font-weight:400;color:var(--text);line-height:1;margin-bottom:.3rem}
+.github-stat-label{font-size:.72rem;color:var(--muted)}
+.github-link{display:inline-flex;align-items:center;gap:.5rem;color:var(--accent);text-decoration:none;font-size:.875rem;font-weight:600;padding:.6rem 1.25rem;border:1px solid rgba(91,140,255,0.3);border-radius:8px;transition:all .2s}
+.github-link:hover{background:rgba(91,140,255,0.1);border-color:rgba(91,140,255,0.5)}
+
+#contact{text-align:center}
+.contact-cta{font-family:var(--serif);font-size:clamp(1.75rem,4vw,3rem);font-weight:400;color:var(--text);line-height:1.2;margin-bottom:1.25rem;max-width:600px;margin-left:auto;margin-right:auto}
+.contact-actions{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:.75rem;margin-bottom:3rem}
+.contact-form{max-width:520px;margin:0 auto;display:flex;flex-direction:column;gap:.75rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+.form-field{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:.75rem 1rem;color:var(--text);font-family:var(--sans);font-size:.875rem;outline:none;transition:border-color .2s}
+.form-field:focus{border-color:rgba(91,140,255,0.5)}
+.form-field::placeholder{color:var(--muted);opacity:.7}
+textarea.form-field{resize:vertical;min-height:120px}
+.form-submit{width:100%;background:var(--accent);color:#0B1020;font-weight:700;font-size:.875rem;padding:.8rem;border-radius:8px;border:none;cursor:pointer;transition:background .2s,transform .2s}
+.form-submit:hover{background:#7aa3ff;transform:translateY(-1px)}
+
+footer{border-top:1px solid var(--border);padding:2.5rem 2rem;max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.footer-name{font-family:var(--serif);font-size:1rem;color:var(--text);margin-bottom:.2rem}
+.footer-tagline{font-size:.78rem;color:var(--muted)}
+.footer-links{display:flex;gap:1.5rem;list-style:none;flex-wrap:wrap}
+.footer-links a{font-size:.8rem;color:var(--muted);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--text)}
+.footer-credit{font-size:.72rem;color:var(--muted);opacity:.5;width:100%;text-align:center;padding-top:1.5rem;border-top:1px solid var(--border);margin-top:.5rem}
+
+.detail-overlay{position:fixed;inset:0;z-index:200;display:flex;align-items:flex-start;justify-content:flex-end;pointer-events:none;visibility:hidden}
+.detail-overlay.open{pointer-events:all;visibility:visible}
+.detail-backdrop{position:absolute;inset:0;background:rgba(7,10,20,0.7);backdrop-filter:blur(4px);opacity:0;transition:opacity .4s ease;cursor:pointer}
+.detail-overlay.open .detail-backdrop{opacity:1}
+.detail-panel{position:relative;width:min(780px,100vw);height:100vh;background:var(--bg);border-left:1px solid var(--border);overflow-y:auto;transform:translateX(100%);transition:transform .45s cubic-bezier(0.16,1,0.3,1);display:flex;flex-direction:column}
+.detail-overlay.open .detail-panel{transform:translateX(0)}
+.detail-panel-inner{padding:2.5rem 2.5rem 4rem;flex:1}
+.detail-close{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:1rem 2.5rem;background:var(--bg);border-bottom:1px solid var(--border);margin:-2.5rem -2.5rem 2rem}
+.detail-close-btn{display:flex;align-items:center;gap:.5rem;color:var(--muted);background:none;border:1px solid var(--border);border-radius:7px;padding:.4rem .9rem;font-size:.8rem;font-weight:500;cursor:pointer;font-family:var(--sans);transition:all .2s}
+.detail-close-btn:hover{color:var(--text);border-color:rgba(91,140,255,0.3)}
+.detail-nav-btns{display:flex;gap:.5rem}
+.detail-nav-btn{display:flex;align-items:center;gap:.35rem;color:var(--muted);background:none;border:1px solid var(--border);border-radius:7px;padding:.4rem .8rem;font-size:.75rem;font-weight:500;cursor:pointer;font-family:var(--sans);transition:all .2s}
+.detail-nav-btn:hover{color:var(--accent);border-color:rgba(91,140,255,0.3)}
+.dp-eyebrow{font-family:var(--mono);font-size:.65rem;color:var(--accent);letter-spacing:.15em;text-transform:uppercase;margin-bottom:.6rem}
+.dp-title{font-family:var(--serif);font-size:clamp(2rem,5vw,3rem);font-weight:400;line-height:1.05;letter-spacing:-.02em;color:var(--text);margin-bottom:.6rem}
+.dp-impact{font-size:.88rem;font-weight:600;color:var(--teal);margin-bottom:1rem;letter-spacing:.02em}
+.dp-desc{font-size:.95rem;color:var(--muted);line-height:1.8;margin-bottom:1.5rem;max-width:600px}
+.dp-meta{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.5rem}
+.dp-pill{display:inline-flex;align-items:center;gap:.35rem;padding:.35rem .8rem;background:var(--surface);border:1px solid var(--border);border-radius:100px;font-size:.75rem;color:var(--muted)}
+.dp-pill strong{color:var(--text)}
+.dp-actions{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
+.dp-visual{width:100%;aspect-ratio:16/7;border-radius:12px;border:1px solid var(--border);overflow:hidden;margin-bottom:2rem}
+.dp-section{margin-bottom:2.5rem}
+.dp-section-label{font-family:var(--mono);font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem;display:block}
+.dp-section-title{font-family:var(--serif);font-size:1.5rem;font-weight:400;color:var(--text);margin-bottom:.85rem;line-height:1.2}
+.dp-section p{color:var(--muted);line-height:1.8;margin-bottom:.9rem;font-size:.9rem}
+.dp-features{list-style:none;padding:0;display:flex;flex-direction:column;gap:.65rem}
+.dp-features li{display:flex;gap:.7rem;align-items:flex-start;font-size:.875rem;color:var(--muted);line-height:1.6}
+.dp-features li::before{content:'→';color:var(--accent);flex-shrink:0;font-size:.75rem;margin-top:.15rem}
+.dp-challenge{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:10px;padding:1.25rem;margin-bottom:.85rem}
+.dp-challenge-title{font-size:.875rem;font-weight:600;color:var(--text);margin-bottom:.4rem}
+.dp-challenge-body{font-size:.82rem;color:var(--muted);line-height:1.65}
+.dp-arch{width:100%;border-radius:10px;border:2px dashed var(--border);padding:2.5rem 1.5rem;text-align:center;background:var(--surface);margin-bottom:.5rem}
+.dp-arch p{color:var(--muted);font-size:.82rem;margin-top:.6rem}
+.dp-learnings{list-style:none;padding:0;display:flex;flex-direction:column;gap:.6rem}
+.dp-learnings li{display:flex;gap:.6rem;font-size:.875rem;color:var(--muted);line-height:1.55}
+.dp-learnings li::before{content:'✦';color:var(--teal);font-size:.6rem;margin-top:.22rem;flex-shrink:0}
+.dp-stack{display:flex;flex-wrap:wrap;gap:.4rem}
+.dp-stack-pill{font-family:var(--mono);font-size:.62rem;color:var(--accent2);background:rgba(139,92,246,0.1);border:1px solid rgba(139,92,246,0.2);border-radius:4px;padding:.22rem .55rem}
+.dp-metrics{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:.75rem;margin-bottom:1rem}
+.dp-metric{background:var(--surface);border:1px solid rgba(20,184,166,0.2);border-radius:10px;padding:1rem;text-align:center}
+.dp-metric-val{font-family:var(--serif);font-size:1.6rem;font-weight:400;background:linear-gradient(135deg,var(--teal),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:.25rem}
+.dp-metric-label{font-size:.68rem;color:var(--muted)}
+
+@media(max-width:768px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  section{padding:4rem 1.25rem}
+  #about{grid-template-columns:1fr;gap:2.5rem}
+  .project-card,.project-card.reverse{grid-template-columns:1fr;direction:ltr;gap:1.5rem;margin-bottom:3rem}
+  .learning-grid{grid-template-columns:repeat(2,1fr)}
+  .hackathon-grid{grid-template-columns:1fr}
+  .olympiad-categories{grid-template-columns:1fr}
+  .github-stats{grid-template-columns:repeat(2,1fr)}
+  .detail-panel{width:100vw}
+  .detail-panel-inner{padding:1.5rem 1.5rem 4rem}
+  .detail-close{padding:.75rem 1.5rem;margin:-1.5rem -1.5rem 1.5rem}
+}
+@media(max-width:900px){
+  .archive-grid{grid-template-columns:repeat(2,1fr)}
+  .research-grid{grid-template-columns:1fr}
+
+  .hackathon-grid{grid-template-columns:1fr}
+  .learning-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:580px){
+  .archive-grid{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+
+<script>(function(){var t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t)})();</script>
+
+<div id="progress-bar"></div>
+
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">T<span>.</span>Shah</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#hackathons">Hackathons</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:.5rem;">
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" onclick="toggleTheme()" style="margin-left:0"></button>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#about" onclick="closeMenu()">About</a>
+  <a href="#projects" onclick="closeMenu()">Projects</a>
+  <a href="#research" onclick="closeMenu()">Research</a>
+  <a href="#hackathons" onclick="closeMenu()">Hackathons</a>
+  <a href="#experience" onclick="closeMenu()">Experience</a>
+  <a href="#contact" onclick="closeMenu()">Contact</a>
+</div>
+
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Open to Opportunities · 2027</div>
+    <h1 class="hero-name">Tanisha Shah</h1>
+    <div class="hero-role-wrap">
+      <span style="color:var(--muted)">—</span>
+      <span class="hero-role-switcher" id="role-switcher">AI Engineer</span>
+    </div>
+    <p class="hero-tagline">Computer Engineering student at Nirma University building intelligent systems at the intersection of AI research and full-stack engineering.</p>
+    <div class="hero-actions">
+      <a href="https://tanisha-shah.github.io" target="_blank" class="btn-primary">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download Resume
+      </a>
+      <a href="#projects" class="btn-secondary">Explore Projects <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    </div>
+    <div class="hero-socials">
+      <a href="https://github.com/tanisha-shah" target="_blank"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>GitHub</a>
+      <div class="dot"></div>
+      <a href="https://linkedin.com/in/tanisha-shah-3b58ba371" target="_blank"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
+      <div class="dot"></div>
+      <a href="mailto:tanisharshah06@gmail.com"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Email</a>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="about-story reveal">
+    <span class="section-label">About</span>
+    <h2 class="section-title">Driven by purpose,<br><span class="grad">powered by engineering</span></h2>
+    <p>I'm a Computer Science student at Nirma University with a keen interest in understanding how systems work — and translating that understanding into solutions that are practical, reliable, and genuinely useful.</p>
+    <p>My work spans federated learning research and production-grade full-stack applications. I'm drawn to problems where engineering depth matters: designing distributed training pipelines, building RAG systems that stay grounded, or creating mobile apps that make complex AI accessible to everyday users.</p>
+    <p>I value clarity in thinking and approach problems structurally. Whether writing research pipelines or debugging a backend edge case, the goal is always the same — solutions that hold up under real conditions.</p>
+  </div>
+  <div>
+    <div class="reveal reveal-delay-1">
+      <div class="journey-constellation">
+        <div class="constellation-track">
+          <div class="constellation-node">
+            <div class="node-left"><div class="node-orb">⌨️</div><div class="node-line"></div></div>
+            <div class="node-body"><div class="node-label">Programming Foundations</div><div class="node-desc">C and Java — learning to reason algorithmically and think in systems.</div></div>
+          </div>
+          <div class="constellation-node">
+            <div class="node-left"><div class="node-orb">🌐</div><div class="node-line"></div></div>
+            <div class="node-body"><div class="node-label">Web Development</div><div class="node-desc">React, Node.js, REST APIs — bridging design and engineering to build things that work.</div></div>
+          </div>
+          <div class="constellation-node">
+            <div class="node-left"><div class="node-orb">🧠</div><div class="node-line"></div></div>
+            <div class="node-body"><div class="node-label">AI & Machine Learning</div><div class="node-desc">LLMs, RAG pipelines, Generative AI — understanding the layer beneath the API.</div></div>
+          </div>
+          <div class="constellation-node">
+            <div class="node-left"><div class="node-orb">🔬</div></div>
+            <div class="node-body"><div class="node-label">Research + Intelligent Systems</div><div class="node-desc">Federated learning, computer vision, AI for real-world impact — where I am now.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="stats-grid reveal reveal-delay-2">
+      <div class="stat-card"><div class="stat-num">5+</div><div class="stat-label">Production Projects</div></div>
+      <div class="stat-card"><div class="stat-num">20+</div><div class="stat-label">Technologies</div></div>
+      <div class="stat-card"><div class="stat-num">3</div><div class="stat-label">Hackathons</div></div>
+      <div class="stat-card"><div class="stat-num">2</div><div class="stat-label">Research Projects</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+<section id="learning">
+  <span class="section-label">Continuous Learning</span>
+  <h2 class="section-title" style="margin-bottom:.5rem">What I'm <span class="grad">Exploring</span></h2>
+  <p class="section-sub">What's on the workbench right now.</p>
+  <div class="learning-grid">
+    <div class="learning-card reveal"><div class="learning-cat">📡 Researching</div><div class="learning-items"><div class="learning-item">Federated Learning convergence</div><div class="learning-item">Non-IID data strategies</div><div class="learning-item">Privacy-preserving ML</div><div class="learning-item">Computer Vision pipelines</div></div></div>
+    <div class="learning-card reveal reveal-delay-1"><div class="learning-cat">⚙️ Building</div><div class="learning-items"><div class="learning-item">RAG systems with LlamaIndex</div><div class="learning-item">FastAPI async architectures</div><div class="learning-item">Real-time streaming UX</div><div class="learning-item">Mobile AI with Flutter</div></div></div>
+    <div class="learning-card reveal reveal-delay-2"><div class="learning-cat">📖 Reading</div><div class="learning-items"><div class="learning-item">LLM internals & alignment</div><div class="learning-item">Distributed systems design</div><div class="learning-item">Research methodology</div><div class="learning-item">System design patterns</div></div></div>
+    <div class="learning-card reveal reveal-delay-3"><div class="learning-cat">🎯 Preparing</div><div class="learning-items"><div class="learning-item">Google Cloud Architect cert</div><div class="learning-item">DeepMind AI Research cert</div><div class="learning-item">Competitive programming</div><div class="learning-item">Research paper writing</div></div></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+<section id="projects">
+  <span class="section-label">Work</span>
+  <h2 class="section-title"><span class="grad">Featured</span> Projects</h2>
+  <p class="section-sub">Selected work representing my strongest engineering — from AI infrastructure to mobile accessibility.</p>
+
+  <div class="project-card reveal">
+    <div class="project-visual" onclick="openDetail('cognisync')">
+      <div class="project-visual-inner pv-cognisync">
+        <div class="pv-lines"></div><div class="pv-label">CogniSync AI</div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:.75rem;z-index:1;">
+          <div style="font-family:var(--mono);font-size:.65rem;color:rgba(91,140,255,0.6);letter-spacing:.1em">RAG PIPELINE</div>
+          <div style="display:flex;gap:1rem;align-items:center;">
+            <div style="width:40px;height:40px;border-radius:50%;border:1px solid rgba(91,140,255,0.3);display:flex;align-items:center;justify-content:center;font-size:1.1rem">📄</div>
+            <div style="width:50px;height:1px;background:linear-gradient(90deg,rgba(91,140,255,.5),rgba(139,92,246,.5))"></div>
+            <div style="width:40px;height:40px;border-radius:50%;border:1px solid rgba(139,92,246,0.3);display:flex;align-items:center;justify-content:center;font-size:1.1rem">🧠</div>
+            <div style="width:50px;height:1px;background:linear-gradient(90deg,rgba(139,92,246,.5),rgba(20,184,166,.5))"></div>
+            <div style="width:40px;height:40px;border-radius:50%;border:1px solid rgba(20,184,166,0.3);display:flex;align-items:center;justify-content:center;font-size:1.1rem">💡</div>
+          </div>
+          <div style="font-family:var(--mono);font-size:.58rem;color:rgba(255,255,255,0.18)">INGEST → EMBED → RETRIEVE → RESPOND</div>
+        </div>
+        <div class="pv-icon">⚡</div>
+      </div>
+    </div>
+    <div class="project-info">
+      <div class="project-index">01 · FEATURED</div>
+      <h3 class="project-title">CogniSync AI</h3>
+      <div class="project-impact">Intelligent Learning Platform</div>
+      <p class="project-desc">A full-stack AI SaaS platform that transforms static study materials into interactive learning experiences. Built a "Lecture-to-Logic" RAG engine using semantic chunking, Gemini embeddings, and HNSW vector search — grounding every AI response in the user's own uploaded materials. Includes adaptive quizzing, spaced-repetition flashcards, real-time token streaming, and multi-format ingestion across 10+ features.</p>
+      <div class="tag-list"><span class="tag">Next.js</span><span class="tag">FastAPI</span><span class="tag">PostgreSQL</span><span class="tag">pgvector</span><span class="tag">LlamaIndex</span><span class="tag">Gemini API</span><span class="tag">Supabase</span></div>
+      <div class="project-links">
+        <button class="btn-case-study" onclick="openDetail('cognisync')">View Case Study →</button>
+        <a href="https://github.com/tanisha-shah" target="_blank"><svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>GitHub</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-card reverse reveal">
+    <div class="project-visual" onclick="openDetail('labellens')">
+      <div class="project-visual-inner pv-labellens">
+        <div class="pv-lines"></div><div class="pv-label">LabelLens</div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:.75rem;z-index:1;">
+          <div style="font-size:2.5rem">📱</div>
+          <div style="font-family:var(--mono);font-size:.6rem;color:rgba(20,184,166,0.6);letter-spacing:.1em;text-align:center">OCR → AI ANALYSIS → SAFETY SCORE</div>
+          <div style="display:flex;gap:.5rem">
+            <div style="padding:.2rem .5rem;background:rgba(20,184,166,0.1);border:1px solid rgba(20,184,166,0.2);border-radius:4px;font-size:.58rem;color:var(--teal);font-family:var(--mono)">90%+ ACCURACY</div>
+            <div style="padding:.2rem .5rem;background:rgba(91,140,255,0.1);border:1px solid rgba(91,140,255,0.2);border-radius:4px;font-size:.58rem;color:var(--accent);font-family:var(--mono)">&lt;3s ANALYSIS</div>
+          </div>
+        </div>
+        <div class="pv-icon">🔬</div>
+      </div>
+    </div>
+    <div class="project-info">
+      <div class="project-index">02 · FEATURED</div>
+      <h3 class="project-title">LabelLens</h3>
+      <div class="project-impact">AI Product Safety Analyzer</div>
+      <p class="project-desc">A mobile app that scans product labels using OCR and AI to deliver real-time safety scores in under 3 seconds. Built a personalization engine that dynamically reclassifies ingredient risks based on individual health profiles — allergies, dietary restrictions, pregnancy, baby mode — ensuring every result is tailored to that specific user rather than generic.</p>
+      <div class="tag-list"><span class="tag">Flutter</span><span class="tag">FastAPI</span><span class="tag">Supabase</span><span class="tag">Firebase</span><span class="tag">OCR</span><span class="tag">Render</span></div>
+      <div class="project-links">
+        <button class="btn-case-study" onclick="openDetail('labellens')">View Case Study →</button>
+        <a href="https://github.com/tanisha-shah" target="_blank"><svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>GitHub</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-card reveal">
+    <div class="project-visual" onclick="openDetail('federated')">
+      <div class="project-visual-inner pv-federated">
+        <div class="pv-lines"></div><div class="pv-label">AgrifoldVGG · Research</div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:.75rem;z-index:1;">
+          <div style="font-family:var(--mono);font-size:.6rem;color:rgba(91,140,255,0.5);letter-spacing:.1em">FEDERATED NETWORK</div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem">
+            <div style="width:32px;height:32px;border-radius:6px;border:1px solid rgba(91,140,255,0.25);background:rgba(91,140,255,0.08);display:flex;align-items:center;justify-content:center;font-size:.8rem">🌿</div>
+            <div style="width:32px;height:32px;border-radius:6px;border:1px solid rgba(139,92,246,0.25);background:rgba(139,92,246,0.08);display:flex;align-items:center;justify-content:center;font-size:.8rem">🌿</div>
+            <div style="width:32px;height:32px;border-radius:6px;border:1px solid rgba(20,184,166,0.25);background:rgba(20,184,166,0.08);display:flex;align-items:center;justify-content:center;font-size:.8rem">🌿</div>
+          </div>
+          <div style="font-size:.62rem;color:rgba(255,255,255,0.18)">↓ SCAFFOLD AGGREGATION ↓</div>
+          <div style="padding:.3rem .75rem;background:rgba(20,184,166,0.1);border:1px solid rgba(20,184,166,0.2);border-radius:4px;font-family:var(--mono);font-size:.6rem;color:var(--teal)">97.38% TEST ACCURACY</div>
+        </div>
+        <div class="pv-icon">🧬</div>
+      </div>
+    </div>
+    <div class="project-info">
+      <div class="project-index">03 · RESEARCH PROJECT</div>
+      <h3 class="project-title">Federated Soybean Disease Detection</h3>
+      <div class="project-impact">AgrifoldVGG · 97.38% Accuracy · 0.974 Macro F1</div>
+      <p class="project-desc">Designed a custom VGG16 architecture augmented with 1D Efficient Channel Attention modules to isolate disease-specific leaf textures. Deployed across a simulated federated network using SCAFFOLD — neutralizing client drift on extreme non-IID data. Built an automated CV pipeline processing 8,600+ images using SAM for semantic segmentation, with a live evaluation dashboard.</p>
+      <div class="tag-list"><span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">OpenCV</span><span class="tag">SAM</span><span class="tag">SCAFFOLD</span><span class="tag">VGG16</span><span class="tag">Federated Learning</span></div>
+      <div class="project-links">
+        <button class="btn-case-study" onclick="openDetail('federated')">View Case Study →</button>
+        <a href="https://github.com/tanisha-shah" target="_blank"><svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>GitHub</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-card reverse reveal">
+    <div class="project-visual" onclick="openDetail('careerlens')">
+      <div class="project-visual-inner pv-careerlens">
+        <div class="pv-lines"></div><div class="pv-label">CareerLens</div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:.75rem;z-index:1;">
+          <div style="font-size:2rem">📊</div>
+          <div style="display:flex;gap:.35rem;align-items:flex-end;height:48px">
+            <div style="width:11px;height:40%;background:rgba(139,92,246,0.4);border-radius:2px 2px 0 0"></div>
+            <div style="width:11px;height:65%;background:rgba(139,92,246,0.5);border-radius:2px 2px 0 0"></div>
+            <div style="width:11px;height:28%;background:rgba(139,92,246,0.3);border-radius:2px 2px 0 0"></div>
+            <div style="width:11px;height:100%;background:rgba(91,140,255,0.6);border-radius:2px 2px 0 0"></div>
+            <div style="width:11px;height:55%;background:rgba(91,140,255,0.35);border-radius:2px 2px 0 0"></div>
+            <div style="width:11px;height:78%;background:rgba(20,184,166,0.5);border-radius:2px 2px 0 0"></div>
+          </div>
+          <div style="font-family:var(--mono);font-size:.58rem;color:rgba(139,92,246,0.5);letter-spacing:.08em">AI LABOR MARKET ANALYTICS</div>
+        </div>
+        <div class="pv-icon">🗺️</div>
+      </div>
+    </div>
+    <div class="project-info">
+      <div class="project-index">04 · FEATURED</div>
+      <h3 class="project-title">CareerLens</h3>
+      <div class="project-impact">Data-Driven Workforce Analytics</div>
+      <p class="project-desc">A full-stack analytics platform visualizing how AI is transforming labor markets in real time. Built a Python scraping pipeline tracking live job demand across LinkedIn and Naukri, and designed an interactive heatmap with an early-warning algorithm to surface skill gaps and declining roles before they become critical.</p>
+      <div class="tag-list"><span class="tag">React.js</span><span class="tag">Node.js</span><span class="tag">PostgreSQL</span><span class="tag">Python</span><span class="tag">Data Visualization</span></div>
+      <div class="project-links">
+        <button class="btn-case-study" onclick="openDetail('careerlens')">View Case Study →</button>
+        <a href="https://github.com/tanisha-shah" target="_blank"><svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>GitHub</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-card reveal">
+    <div class="project-visual" onclick="openDetail('medbot')">
+      <div class="project-visual-inner pv-medbot">
+        <div class="pv-lines"></div><div class="pv-label">MedBot</div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:.75rem;z-index:1;">
+          <div style="font-size:2rem">🏥</div>
+          <div style="display:flex;gap:.4rem;align-items:center;flex-wrap:wrap;justify-content:center">
+            <div style="padding:.2rem .45rem;background:rgba(255,155,60,0.1);border:1px solid rgba(255,155,60,0.2);border-radius:3px;font-size:.58rem;color:rgba(255,155,60,0.8);font-family:var(--mono)">SMS</div>
+            <span style="font-size:.65rem;color:rgba(255,255,255,0.18)">→</span>
+            <div style="padding:.2rem .45rem;background:rgba(255,155,60,0.1);border:1px solid rgba(255,155,60,0.2);border-radius:3px;font-size:.58rem;color:rgba(255,155,60,0.8);font-family:var(--mono)">RASA NLU</div>
+            <span style="font-size:.65rem;color:rgba(255,255,255,0.18)">→</span>
+            <div style="padding:.2rem .45rem;background:rgba(255,155,60,0.1);border:1px solid rgba(255,155,60,0.2);border-radius:3px;font-size:.58rem;color:rgba(255,155,60,0.8);font-family:var(--mono)">GUIDANCE</div>
+          </div>
+          <div style="font-family:var(--mono);font-size:.58rem;color:rgba(255,155,60,0.28);letter-spacing:.08em">RURAL HEALTHCARE ACCESS</div>
+        </div>
+        <div class="pv-icon">📡</div>
+      </div>
+    </div>
+    <div class="project-info">
+      <div class="project-index">05 · FEATURED</div>
+      <h3 class="project-title">MedBot</h3>
+      <div class="project-impact">AI-Driven Public Health Chatbot</div>
+      <p class="project-desc">An SMS/USSD chatbot designed to bring symptom prediction and treatment guidance to rural communities without reliable internet access. Built on Rasa NLU/Core with an end-to-end encrypted FastAPI and MongoDB backend. Implements big-data pattern detection on anonymized queries to surface early disease outbreak signals to health authorities.</p>
+      <div class="tag-list"><span class="tag">Rasa NLU</span><span class="tag">FastAPI</span><span class="tag">MongoDB</span><span class="tag">Twilio</span><span class="tag">Big Data</span></div>
+      <div class="project-links">
+        <button class="btn-case-study" onclick="openDetail('medbot')">View Case Study →</button>
+        <a href="https://github.com/tanisha-shah" target="_blank"><svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+<section id="archive">
+  <span class="section-label">Engineering Archive</span>
+  <h2 class="section-title">Mini <span class="grad">Projects</span></h2>
+  <p class="section-sub">Experiments, academic explorations, and technical curiosities.</p>
+  <div class="archive-grid">
+    <div class="archive-card reveal"><div class="archive-icon">🎓</div><div class="archive-title">TheCourseQuest</div><div class="archive-desc">A responsive course recommendation platform that helps students discover minor elective courses based on their academic interests. Features an interactive preferences-based filtering system to guide informed academic decision-making.</div><div class="archive-tags"><span class="archive-tag">HTML/CSS</span><span class="archive-tag">JavaScript</span><span class="archive-tag">jQuery</span></div><a href="https://github.com/tanisha-shah" target="_blank" class="archive-link">View →</a></div>
+    <div class="archive-card reveal reveal-delay-1"><div class="archive-icon">🅿️</div><div class="archive-title">Smart Parking Lot System</div><div class="archive-desc">A console-based automation system built around core OOP principles — inheritance, polymorphism, and encapsulation. Implements algorithms for automated cost calculation, space allocation, and a centralized file-handling system for parking records.</div><div class="archive-tags"><span class="archive-tag">C++</span><span class="archive-tag">OOP</span><span class="archive-tag">File I/O</span></div><a href="https://github.com/tanisha-shah" target="_blank" class="archive-link">View →</a></div>
+    <div class="archive-card reveal reveal-delay-2"><div class="archive-icon">🎬</div><div class="archive-title">IMDB Rating Predictor</div><div class="archive-desc">End-to-end ML pipeline on the IMDB dataset — missing value handling, feature encoding, and a K-Nearest Neighbors classifier for movie rating categorization. Evaluated with accuracy, precision, recall, and F1-score.</div><div class="archive-tags"><span class="archive-tag">Python</span><span class="archive-tag">Pandas</span><span class="archive-tag">Scikit-Learn</span><span class="archive-tag">KNN</span></div><a href="https://github.com/tanisha-shah" target="_blank" class="archive-link">View →</a></div>
+    <div class="archive-card reveal reveal-delay-3"><div class="archive-icon">📡</div><div class="archive-title">PCM Signal Visualiser</div><div class="archive-desc">An interactive simulation dashboard for Pulse Code Modulation — visualizes analog-to-digital conversion in real time, including sampling, quantization, and binary encoding stages. Supports configurable bit-depth and sampling rate to demonstrate Nyquist theorem effects on signal fidelity.</div><div class="archive-tags"><span class="archive-tag">Data Communications</span><span class="archive-tag">Simulation</span><span class="archive-tag">JavaScript</span></div><a href="https://github.com/tanisha-shah" target="_blank" class="archive-link">View →</a></div>
+    <div class="archive-card reveal reveal-delay-1"><div class="archive-icon">🗄️</div><div class="archive-title">DBMS Normaliser</div><div class="archive-desc">An interactive database normalization tool that takes a relation schema and functional dependencies as input, then steps through 1NF → 2NF → 3NF → BCNF automatically — highlighting violations, decomposing relations, and explaining each transformation with visual dependency graphs.</div><div class="archive-tags"><span class="archive-tag">DBMS</span><span class="archive-tag">SQL</span><span class="archive-tag">Normalization</span></div><a href="https://github.com/tanisha-shah" target="_blank" class="archive-link">View →</a></div>
+    <div class="archive-card reveal reveal-delay-2"><div class="archive-icon">⚙️</div><div class="archive-title">Process Control Block Visualiser</div><div class="archive-desc">An OS-level simulation tool that visualizes PCB state transitions across process lifecycle stages — New, Ready, Running, Waiting, and Terminated. Demonstrates CPU scheduling algorithms (FCFS, SJF, Round Robin) with Gantt charts and real-time context-switch tracking for process management education.</div><div class="archive-tags"><span class="archive-tag">Operating Systems</span><span class="archive-tag">Scheduling</span><span class="archive-tag">Simulation</span></div><a href="https://github.com/tanisha-shah" target="_blank" class="archive-link">View →</a></div>
+  </div>
+</section>
+
+<section id="research" class="full-width">
+  <div class="inner">
+    <span class="section-label">Research &amp; Development</span>
+    <h2 class="section-title">Research <span class="grad">Projects</span></h2>
+    <p class="section-sub">Active work in distributed machine learning and computer vision for real-world impact.</p>
+    <div class="research-grid">
+      <div class="research-card featured reveal">
+        <div class="research-accent"></div>
+        <div class="research-status"><div class="dot-live"></div>Active · Feb 2026 – Present</div>
+        <div class="research-title">Federated Learning for Agricultural Disease Detection</div>
+        <div class="research-desc">Developing AgrifoldVGG — a custom VGG16 architecture with 1D Efficient Channel Attention modules trained across a simulated federated network for soybean leaf disease classification. The core challenge: achieving high accuracy on extreme non-IID distributions without centralizing sensitive farm data. Current results outperform baseline federated approaches on the 8,600+ image dataset.</div>
+        <div class="research-highlight">📊 97.38% Test Accuracy · 0.974 Macro F1-Score · SCAFFOLD Algorithm</div>
+        <div class="research-methods"><span class="method-tag">Federated Learning</span><span class="method-tag">VGG16 + ECA</span><span class="method-tag">SCAFFOLD</span><span class="method-tag">SAM Segmentation</span><span class="method-tag">OpenCV</span><span class="method-tag">Non-IID Data</span><span class="method-tag">Computer Vision</span></div>
+      </div>
+      <div class="research-card reveal reveal-delay-1">
+        <div class="research-accent teal"></div>
+        <div class="research-status past"><div class="dot-live"></div>Completed · Sept 2025 – Jan 2026</div>
+        <div class="research-title">Decentralized Intrusion Detection on HIKARI Dataset</div>
+        <div class="research-desc">Foundational federated research simulating a decentralized anomaly detection environment on the HIKARI network dataset. Applied PCA for dimensionality reduction, SMOTE for class balancing, and validated secure model aggregation using FedAvg — establishing the groundwork for the agricultural pipeline.</div>
+        <div class="research-methods"><span class="method-tag">FedAvg</span><span class="method-tag">PCA</span><span class="method-tag">SMOTE</span><span class="method-tag">Anomaly Detection</span><span class="method-tag">HIKARI Dataset</span></div>
+      </div>
+    </div>
+    <div class="research-interests-wrap reveal">
+      <span class="interests-label">Research Interests</span>
+      <div class="interests-constellation">
+        <div class="interest-node" data-color="blue">
+          <span class="in-icon">🔗</span>
+          <div class="in-label">Federated Learning</div>
+          <div class="in-sub">Distributed training across non-IID data without centralizing sensitive sources</div>
+          <div class="in-bar"></div>
+        </div>
+        <div class="interest-node" data-color="teal">
+          <span class="in-icon">👁️</span>
+          <div class="in-label">Computer Vision</div>
+          <div class="in-sub">Attention-based architectures, semantic segmentation, and disease detection pipelines</div>
+          <div class="in-bar"></div>
+        </div>
+        <div class="interest-node" data-color="purple">
+          <span class="in-icon">🧠</span>
+          <div class="in-label">Large Language Models</div>
+          <div class="in-sub">RAG systems, grounded generation, and LLM internals for applied AI products</div>
+          <div class="in-bar"></div>
+        </div>
+        <div class="interest-node" data-color="blue">
+          <span class="in-icon">🔒</span>
+          <div class="in-label">Privacy-Preserving ML</div>
+          <div class="in-sub">Differential privacy, k-anonymity, and secure aggregation in real-world systems</div>
+          <div class="in-bar"></div>
+        </div>
+        <div class="interest-node" data-color="teal">
+          <span class="in-icon">🌿</span>
+          <div class="in-label">AI for Agriculture</div>
+          <div class="in-sub">Applying ML to crop health, resource optimization, and edge deployment on farms</div>
+          <div class="in-bar"></div>
+        </div>
+        <div class="interest-node" data-color="purple">
+          <span class="in-icon">⚡</span>
+          <div class="in-label">Distributed Systems</div>
+          <div class="in-sub">Decentralized architectures, consensus protocols, and fault-tolerant design patterns</div>
+          <div class="in-bar"></div>
+        </div>
+        <div class="interest-node" data-color="blue">
+          <span class="in-icon">📚</span>
+          <div class="in-label">Educational Technology</div>
+          <div class="in-sub">Adaptive learning, spaced repetition, and AI-powered study tools for real retention</div>
+          <div class="in-bar"></div>
+        </div>
+        <div class="interest-node" data-color="teal">
+          <span class="in-icon">🏥</span>
+          <div class="in-label">AI for Accessibility</div>
+          <div class="in-sub">Low-resource interfaces, SMS-first AI, and technology reaching underserved communities</div>
+          <div class="in-bar"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+<section id="hackathons">
+  <span class="section-label">Achievements</span>
+  <h2 class="section-title">Hackathons &amp; <span class="grad">Recognition</span></h2>
+  <p class="section-sub">Competing, building, and learning under pressure.</p>
+  <div class="hackathon-grid">
+    <div class="hackathon-card reveal"><div class="hackathon-badge">🏆 National Finalist</div><div class="hackathon-name">Innovate Bharat Hackathon 2026</div><div class="hackathon-year">National Level · 2026</div><div class="hackathon-desc">Advanced to the national finals — one of the top teams selected from thousands of applicants across India, competing on solutions with real-world societal impact.</div><div class="hackathon-result">🎯 National Level Finalist</div></div>
+    <div class="hackathon-card reveal reveal-delay-1"><div class="hackathon-badge">⚡ 48-Hour Build</div><div class="hackathon-name">HackaMined 2026</div><div class="hackathon-year">National Level · 48 Hours · 2026</div><div class="hackathon-desc">Participated in an intensive 48-hour national-level hackathon — designing, building, and presenting a complete solution under tight time constraints.</div><div class="hackathon-result">✓ National Participant</div></div>
+    <div class="hackathon-card reveal reveal-delay-2"><div class="hackathon-badge">🔬 Innovation Track</div><div class="hackathon-name">Smart India Hackathon 2025</div><div class="hackathon-year">Internal + National Qualifier · 2025</div><div class="hackathon-desc">Qualified the internal selection round at Nirma University — selected as one of the top teams to represent the institution in India's largest student hackathon.</div><div class="hackathon-result">✓ Internal Round Qualifier</div></div>
+  </div>
+  <div class="olympiad-section reveal">
+    <div class="olympiad-title">Olympiad Achievements</div>
+    <div class="olympiad-sub">Multiple national and international medal wins across Mathematics, Science, Informatics, and Astronomy.</div>
+    <div class="olympiad-block">
+      <div class="olympiad-rows">
+        <div class="olympiad-left">
+          <div class="olympiad-col-head">🌍 <span>International</span> Olympiads</div>
+          <div class="olympiad-entry">
+            <div class="olympiad-medal medal-gold">🥇</div>
+            <div class="olympiad-entry-info">
+              <div class="olympiad-entry-name">IOM — International Mathematics Olympiad</div>
+              <div class="olympiad-entry-detail">Competed at the international level in mathematics — problem-solving, algebra, and combinatorics</div>
+              <span class="olympiad-entry-badge badge-intl">International</span>
+            </div>
+          </div>
+          <div class="olympiad-entry">
+            <div class="olympiad-medal medal-gold">🥇</div>
+            <div class="olympiad-entry-info">
+              <div class="olympiad-entry-name">IOS — International Olympiad of Science</div>
+              <div class="olympiad-entry-detail">International science competition spanning Physics, Chemistry, and Biology</div>
+              <span class="olympiad-entry-badge badge-intl">International</span>
+            </div>
+          </div>
+          <div class="olympiad-entry">
+            <div class="olympiad-medal medal-silver">🥈</div>
+            <div class="olympiad-entry-info">
+              <div class="olympiad-entry-name">IIO — International Informatics Olympiad</div>
+              <div class="olympiad-entry-detail">Computational thinking, algorithms, and problem-solving at the international level</div>
+              <span class="olympiad-entry-badge badge-intl">International</span>
+            </div>
+          </div>
+        </div>
+        <div class="olympiad-right">
+          <div class="olympiad-col-head">🇮🇳 <span>National</span> Olympiads</div>
+          <div class="olympiad-entry">
+            <div class="olympiad-medal medal-gold">🥇</div>
+            <div class="olympiad-entry-info">
+              <div class="olympiad-entry-name">NSO — National Science Olympiad</div>
+              <div class="olympiad-entry-detail">Science Olympiad Foundation — top ranks across multiple subject areas at national level</div>
+              <span class="olympiad-entry-badge badge-natl">National</span>
+            </div>
+          </div>
+          <div class="olympiad-entry">
+            <div class="olympiad-medal medal-silver">🥈</div>
+            <div class="olympiad-entry-info">
+              <div class="olympiad-entry-name">IMO — International Math Olympiad (SOF)</div>
+              <div class="olympiad-entry-detail">National-level mathematics competition — logical reasoning and advanced problem-solving</div>
+              <span class="olympiad-entry-badge badge-natl">National</span>
+            </div>
+          </div>
+          <div class="olympiad-entry">
+            <div class="olympiad-medal medal-bronze">🥉</div>
+            <div class="olympiad-entry-info">
+              <div class="olympiad-entry-name">IAIS / Additional Subject Olympiads</div>
+              <div class="olympiad-entry-detail">Participated and earned recognition across English, Cyber, and Science categories</div>
+              <span class="olympiad-entry-badge badge-natl">National</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+<section id="experience">
+  <span class="section-label">Experience</span>
+  <h2 class="section-title">Work &amp; <span class="grad">Leadership</span></h2>
+  <p class="section-sub">Internships, community leadership, and technical contributions.</p>
+  <div class="exp-timeline">
+    <div class="exp-item reveal"><div class="exp-meta"><span class="exp-date">Feb 2026</span><span class="exp-type intern">Internship</span></div><div class="exp-role">Data Analytics Virtual Intern</div><div class="exp-org">Deloitte · Remote</div><ul class="exp-bullets"><li>Applied data cleaning, exploratory analysis, and visualization on real business datasets.</li><li>Developed analytical thinking within a structured professional consulting environment.</li></ul></div>
+    <div class="exp-item volunteer reveal reveal-delay-1"><div class="exp-meta"><span class="exp-date">Dec 2025 – Present</span><span class="exp-type volunteer">Leadership</span></div><div class="exp-role">Executive Committee Member</div><div class="exp-org">Association of Computer Engineering Students, Nirma University</div><ul class="exp-bullets"><li>Contributing to departmental events, technical workshops, and student community initiatives.</li><li>Coordinating between student members and faculty for academic and extracurricular programs.</li></ul></div>
+    <div class="exp-item leadership reveal reveal-delay-2"><div class="exp-meta"><span class="exp-date">Aug 2025 – Present</span><span class="exp-type leadership">Technical Role</span></div><div class="exp-role">Webmaster</div><div class="exp-org">IEEE Computer Society, Nirma University</div><ul class="exp-bullets"><li>Managing the IEEE CS chapter website — frontend development, content updates, and web presence strategy.</li><li>Supporting chapter communications and digital outreach across the technical community.</li></ul></div>
+    <div class="exp-item reveal reveal-delay-3"><div class="exp-meta"><span class="exp-date">Sept – Oct 2024</span><span class="exp-type intern">Internship</span></div><div class="exp-role">Data Science Intern</div><div class="exp-org">Rinex &amp; IIT Bhubaneswar · Remote</div><ul class="exp-bullets"><li>Applied data science methodologies in a research-adjacent environment affiliated with IIT Bhubaneswar.</li><li>Worked on dataset preprocessing, model exploration, and documentation of findings.</li></ul></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+<section id="certifications">
+  <span class="section-label">Credentials</span>
+  <h2 class="section-title">Certifications</h2>
+  <p class="section-sub">Technical credentials anchoring AI, cloud, and data science skills.</p>
+  <div class="cert-grid">
+    <div class="cert-card reveal"><div class="cert-issuer">Google DeepMind</div><div class="cert-name">AI Research Foundation</div><div class="cert-status pursuing">● Pursuing</div></div>
+    <div class="cert-card reveal reveal-delay-1"><div class="cert-issuer">Google Cloud</div><div class="cert-name">Professional Cloud Architect</div><div class="cert-status pursuing">● Pursuing</div></div>
+    <div class="cert-card reveal reveal-delay-2"><div class="cert-issuer">IBM</div><div class="cert-name">Generative AI Engineering Professional</div><div class="cert-status">✓ Completed</div></div>
+    <div class="cert-card reveal reveal-delay-3"><div class="cert-issuer">Industry Credential</div><div class="cert-name">Data Science Certification</div><div class="cert-status">✓ Completed</div></div>
+    <div class="cert-card reveal reveal-delay-1"><div class="cert-issuer">Google Cloud</div><div class="cert-name">Skills Boost Program</div><div class="cert-status">✓ Completed</div></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+<section id="skills">
+  <span class="section-label">Skills</span>
+  <h2 class="section-title">Technical <span class="grad">Arsenal</span></h2>
+  <p class="section-sub">Languages, frameworks, and tools I build with.</p>
+  <div class="tech-categories">
+    <div class="reveal"><div class="tech-cat-label">Languages</div><div class="tech-chips"><span class="tech-chip"><span class="chip-icon">☕</span>Java</span><span class="tech-chip"><span class="chip-icon">🐍</span>Python</span><span class="tech-chip"><span class="chip-icon">⚡</span>C++</span><span class="tech-chip"><span class="chip-icon">🔧</span>C</span><span class="tech-chip"><span class="chip-icon">🗃️</span>SQL</span><span class="tech-chip"><span class="chip-icon">🌐</span>JavaScript</span><span class="tech-chip"><span class="chip-icon">🎨</span>HTML/CSS</span></div></div>
+    <div class="reveal reveal-delay-1"><div class="tech-cat-label">Frontend</div><div class="tech-chips"><span class="tech-chip"><span class="chip-icon">⚛️</span>React.js</span><span class="tech-chip"><span class="chip-icon">▲</span>Next.js</span><span class="tech-chip"><span class="chip-icon">📱</span>Flutter</span><span class="tech-chip"><span class="chip-icon">🅰️</span>AngularJS</span><span class="tech-chip"><span class="chip-icon">💫</span>jQuery</span></div></div>
+    <div class="reveal reveal-delay-2"><div class="tech-cat-label">Backend &amp; APIs</div><div class="tech-chips"><span class="tech-chip"><span class="chip-icon">🚀</span>FastAPI</span><span class="tech-chip"><span class="chip-icon">🟢</span>Node.js</span><span class="tech-chip"><span class="chip-icon">🔁</span>Express.js</span><span class="tech-chip"><span class="chip-icon">🔗</span>RESTful APIs</span></div></div>
+    <div class="reveal reveal-delay-1"><div class="tech-cat-label">AI / ML</div><div class="tech-chips"><span class="tech-chip"><span class="chip-icon">🦙</span>LlamaIndex</span><span class="tech-chip"><span class="chip-icon">🤖</span>Rasa NLU</span><span class="tech-chip"><span class="chip-icon">📊</span>Pandas</span><span class="tech-chip"><span class="chip-icon">🔢</span>NumPy</span><span class="tech-chip"><span class="chip-icon">🧠</span>Scikit-Learn</span><span class="tech-chip"><span class="chip-icon">✨</span>Generative AI</span><span class="tech-chip"><span class="chip-icon">🕸️</span>Neural Networks</span></div></div>
+    <div class="reveal reveal-delay-2"><div class="tech-cat-label">Databases</div><div class="tech-chips"><span class="tech-chip"><span class="chip-icon">🐘</span>PostgreSQL</span><span class="tech-chip"><span class="chip-icon">🍃</span>MongoDB</span><span class="tech-chip"><span class="chip-icon">⚡</span>Supabase</span><span class="tech-chip"><span class="chip-icon">💧</span>WatermelonDB</span><span class="tech-chip"><span class="chip-icon">🔍</span>pgvector</span></div></div>
+    <div class="reveal reveal-delay-3"><div class="tech-cat-label">Tools &amp; Cloud</div><div class="tech-chips"><span class="tech-chip"><span class="chip-icon">🐙</span>Git/GitHub</span><span class="tech-chip"><span class="chip-icon">☁️</span>GCP</span><span class="tech-chip"><span class="chip-icon">🔷</span>Azure</span><span class="tech-chip"><span class="chip-icon">🔥</span>Firebase</span><span class="tech-chip"><span class="chip-icon">📮</span>Postman</span><span class="tech-chip"><span class="chip-icon">🔄</span>CI/CD</span><span class="tech-chip"><span class="chip-icon">🏃</span>Agile</span></div></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+<section id="github">
+  <span class="section-label">Open Source</span>
+  <h2 class="section-title">GitHub <span class="grad">Activity</span></h2>
+  <div class="github-stats">
+    <div class="github-stat reveal"><div class="github-stat-num">5+</div><div class="github-stat-label">Repositories</div></div>
+    <div class="github-stat reveal reveal-delay-1"><div class="github-stat-num">2024</div><div class="github-stat-label">Active Since</div></div>
+    <div class="github-stat reveal reveal-delay-2"><div class="github-stat-num">100+</div><div class="github-stat-label">Contributions</div></div>
+    <div class="github-stat reveal reveal-delay-3"><div class="github-stat-num">8.77</div><div class="github-stat-label">University CGPA</div></div>
+  </div>
+  <a href="https://github.com/tanisha-shah" target="_blank" class="github-link reveal"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>View GitHub Profile ↗</a>
+</section>
+
+<div class="divider"></div>
+<section id="contact">
+  <span class="section-label">Contact</span>
+  <div class="contact-cta reveal">Let's build something<br><span style="background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">meaningful</span> together.</div>
+  <p style="color:var(--muted);font-size:.95rem;margin-bottom:2rem;max-width:400px;margin-left:auto;margin-right:auto" class="reveal">Open to research collaborations, internship opportunities, and interesting problems. Always happy to connect.</p>
+  <div class="contact-actions reveal">
+    <a href="mailto:tanisharshah06@gmail.com" class="btn-primary"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Send Email</a>
+    <a href="https://linkedin.com/in/tanisha-shah-3b58ba371" target="_blank" class="btn-secondary">LinkedIn ↗</a>
+    <a href="https://github.com/tanisha-shah" target="_blank" class="btn-secondary">GitHub ↗</a>
+  </div>
+  <div style="max-width:520px;margin:0 auto" class="reveal">
+    <div style="font-family:var(--mono);font-size:.65rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:1rem;text-align:left">Or send a message directly</div>
+    <div class="contact-form">
+      <div class="form-row"><input type="text" class="form-field" placeholder="Your name"/><input type="email" class="form-field" placeholder="Your email"/></div>
+      <input type="text" class="form-field" placeholder="Subject"/>
+      <textarea class="form-field" placeholder="What's on your mind?"></textarea>
+      <button class="form-submit" onclick="handleFormSubmit(this)">Send Message</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div><div class="footer-name">Tanisha Shah</div><div class="footer-tagline">AI Engineer · Full Stack Developer · Researcher</div></div>
+  <ul class="footer-links">
+    <li><a href="#about">About</a></li><li><a href="#projects">Projects</a></li><li><a href="#research">Research</a></li><li><a href="#contact">Contact</a></li>
+    <li><a href="https://github.com/tanisha-shah" target="_blank">GitHub ↗</a></li><li><a href="https://linkedin.com/in/tanisha-shah-3b58ba371" target="_blank">LinkedIn ↗</a></li>
+  </ul>
+  <div class="footer-credit">Built with care, curiosity, and a lot of terminal output · 2024</div>
+</footer>
+
+<div class="detail-overlay" id="detail-overlay">
+  <div class="detail-backdrop" onclick="closeDetail()"></div>
+  <div class="detail-panel" id="detail-panel">
+    <div class="detail-close">
+      <button class="detail-close-btn" onclick="closeDetail()">
+        <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Back to Projects
+      </button>
+      <div class="detail-nav-btns" id="detail-nav"></div>
+    </div>
+    <div class="detail-panel-inner" id="detail-content"></div>
+  </div>
+</div>
+
+<script>
+function toggleTheme(){
+  var t=document.documentElement.getAttribute('data-theme');
+  var n=t==='dark'?'light':'dark';
+  document.documentElement.setAttribute('data-theme',n);
+  localStorage.setItem('theme',n);
+  renderThemeIcons();
+}
+function renderThemeIcons(){
+  var t=document.documentElement.getAttribute('data-theme');
+  var sun='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>';
+  var moon='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>';
+  var icon=t==='dark'?sun:moon;
+  var title=t==='dark'?'Switch to light mode':'Switch to dark mode';
+  var el=document.getElementById('theme-toggle');
+  if(el){el.innerHTML=icon;el.title=title;}
+}
+
+window.addEventListener('scroll',function(){
+  var doc=document.documentElement;
+  var pct=doc.scrollTop/(doc.scrollHeight-doc.clientHeight)*100;
+  var bar=document.getElementById('progress-bar');
+  if(bar)bar.style.width=pct+'%';
+},{passive:true});
+
+var sp=document.createElement('div');
+sp.className='spotlight';
+document.body.appendChild(sp);
+var mx=-1000,my=-1000;
+document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;});
+document.addEventListener('mouseleave',function(){sp.style.opacity='0';});
+document.addEventListener('mouseenter',function(){sp.style.opacity='1';});
+(function loop(){sp.style.left=mx+'px';sp.style.top=my+'px';requestAnimationFrame(loop);})();
+
+window.addEventListener('scroll',function(){
+  var nav=document.querySelector('nav');
+  if(nav)nav.style.boxShadow=window.scrollY>60?'0 4px 30px rgba(0,0,0,0.22)':'none';
+},{passive:true});
+var secs=document.querySelectorAll('section[id]');
+var nls=document.querySelectorAll('.nav-links a');
+if(secs.length){
+  var so=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting)nls.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id);});});
+  },{rootMargin:'-30% 0px -60% 0px'});
+  secs.forEach(function(s){so.observe(s);});
+}
+
+function initReveal(){
+  var els=document.querySelectorAll('.reveal:not(.visible)');
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
+  },{threshold:0.08});
+  els.forEach(function(el){obs.observe(el);});
+}
+
+var roles=['AI Engineer','Full Stack Developer','Research Assistant','Problem Solver'];
+var ri=0,ci=0,del=false;
+function typeRole(){
+  var el=document.getElementById('role-switcher');
+  if(!el)return;
+  var cur=roles[ri];
+  if(!del){el.textContent=cur.slice(0,ci+1);ci++;if(ci===cur.length){del=true;setTimeout(typeRole,2000);return;}}
+  else{el.textContent=cur.slice(0,ci-1);ci--;if(ci===0){del=false;ri=(ri+1)%roles.length;}}
+  setTimeout(typeRole,del?55:90);
+}
+
+function toggleMenu(){var m=document.getElementById('mobile-menu');if(m)m.classList.toggle('open');}
+function closeMenu(){var m=document.getElementById('mobile-menu');if(m)m.classList.remove('open');}
+
+function handleFormSubmit(btn){
+  var orig=btn.textContent;btn.textContent='Opening email client...';btn.disabled=true;
+  var p=btn.parentElement;
+  var name=(p.querySelector('input[placeholder="Your name"]')||{}).value||'';
+  var sub=(p.querySelector('input[placeholder="Subject"]')||{}).value||'';
+  var msg=(p.querySelector('textarea')||{}).value||'';
+  window.location.href='mailto:tanisharshah06@gmail.com?subject='+encodeURIComponent(sub||'Portfolio Contact')+'&body='+encodeURIComponent('From: '+name+'\n\n'+msg);
+  setTimeout(function(){btn.textContent='✓ Opened';setTimeout(function(){btn.textContent=orig;btn.disabled=false;},2500);},800);
+}
+
+var PROJECTS={
+  cognisync:{
+    order:0,
+    eyebrow:'01 · Featured Project · Full Stack + AI',
+    title:'CogniSync AI',
+    impact:'Intelligent Learning Platform',
+    desc:'A full-stack AI SaaS platform that transforms static study materials into interactive, grounded learning experiences — built around a production-grade RAG pipeline and layered service architecture.',
+    pills:[{k:'Stack',v:'Next.js · FastAPI · PostgreSQL'},{k:'AI Layer',v:'LlamaIndex · pgvector · Gemini'},{k:'Auth',v:'Supabase · OAuth 2.0 · JWT'},{k:'Status',v:'In Development'}],
+    gh:'https://github.com/tanisha-shah',
+    live:null,
+    visual:'<div style="width:100%;height:100%;background:linear-gradient(135deg,#0d1a3a,#0f2044,#0a1628);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;"><div style="position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 40px,rgba(91,140,255,.025) 40px,rgba(91,140,255,.025) 41px)"></div><div style="position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:1.5rem;"><div style="font-family:var(--mono);font-size:.6rem;color:rgba(91,140,255,.5);letter-spacing:.15em">LECTURE-TO-LOGIC · RAG ARCHITECTURE</div><div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap;justify-content:center;"><div style="text-align:center"><div style="width:48px;height:48px;border-radius:10px;border:1px solid rgba(91,140,255,.25);background:rgba(91,140,255,.08);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin:0 auto .35rem">📄</div><div style="font-family:var(--mono);font-size:.5rem;color:rgba(255,255,255,.25)">UPLOAD</div></div><div style="color:rgba(91,140,255,.4);font-size:.9rem">→</div><div style="text-align:center"><div style="width:48px;height:48px;border-radius:10px;border:1px solid rgba(139,92,246,.25);background:rgba(139,92,246,.08);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin:0 auto .35rem">🔢</div><div style="font-family:var(--mono);font-size:.5rem;color:rgba(255,255,255,.25)">EMBED</div></div><div style="color:rgba(91,140,255,.4);font-size:.9rem">→</div><div style="text-align:center"><div style="width:48px;height:48px;border-radius:10px;border:1px solid rgba(20,184,166,.25);background:rgba(20,184,166,.08);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin:0 auto .35rem">🔍</div><div style="font-family:var(--mono);font-size:.5rem;color:rgba(255,255,255,.25)">RETRIEVE</div></div><div style="color:rgba(91,140,255,.4);font-size:.9rem">→</div><div style="text-align:center"><div style="width:48px;height:48px;border-radius:10px;border:1px solid rgba(91,140,255,.25);background:rgba(91,140,255,.08);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin:0 auto .35rem">💡</div><div style="font-family:var(--mono);font-size:.5rem;color:rgba(255,255,255,.25)">RESPOND</div></div></div></div></div>',
+    stack:['Next.js','FastAPI','PostgreSQL','pgvector','LlamaIndex','Gemini API','Supabase','JWT','OAuth 2.0','SSE','TypeScript'],
+    problem:'Students upload PDFs and slides then stare at them passively. Existing tools summarize blindly — ignoring the student\'s actual source material — or ask questions unrelated to what was studied. CogniSync asks: what if an AI platform could reason from your own materials rather than from its training data?',
+    features:['Lecture-to-Logic RAG Engine — uploads are chunked semantically, embedded via Gemini, stored in pgvector, and retrieved via HNSW search. Every AI response is grounded in the user\'s own materials.','Adaptive Quizzing — generates questions calibrated to uploaded content; adjusts difficulty based on user performance across sessions.','Spaced-Repetition Flashcards — concepts extracted from documents surfaced on SM-2 scheduling to maximize long-term retention.','Multi-format Ingestion — PDF, PPTX, and DOCX files processed through async FastAPI background tasks, decoupling long AI operations from the HTTP cycle.','Real-time Token Streaming — responses streamed via Server-Sent Events; a custom React hook progressively renders tokens rather than blocking on full generation.','Row-Level Security — PostgreSQL RLS enforces per-user data isolation at the database layer, not just the application layer.'],
+    challenges:[{t:'Chunking strategy for mixed document types',b:'PDF slides chunk differently than lecture transcripts. A fixed-size chunker destroyed context across slide boundaries. Solution: a hybrid chunker applying semantic splitting on prose and section-boundary splitting on structured documents, preserving logical units rather than character counts.'},{t:'Streaming with FastAPI background tasks',b:'Long-running AI operations can\'t block a synchronous HTTP response. The architecture decouples ingestion into background tasks with a status-polling endpoint, while generation streams over SSE — meaning users get immediate feedback without waiting for the full pipeline.'},{t:'JWT verification with Supabase Auth',b:'Supabase JWTs must be verified independently in FastAPI. Implemented middleware that validates JWT signatures against Supabase\'s public JWKS endpoint on every request, ensuring auth is never bypassed.'}],
+    learnings:['Chunking strategy has more impact on RAG quality than the retrieval algorithm — garbage in, garbage out applies at the ingestion layer.','Row-Level Security in PostgreSQL is the correct place to enforce multi-tenancy, not application-level filtering.','Async background tasks need explicit status tracking — users need feedback that their document is being processed.','HNSW index parameters meaningfully affect recall at scale — not something to leave at defaults.'],
+    future:['Collaborative study rooms — shared document spaces with per-user RAG contexts.','Voice-mode interaction — spoken Q&A against uploaded materials using Whisper for STT.','Learning analytics dashboard — engagement heatmaps, retention curves, weak-concept detection.','Offline-capable PWA — cached flashcard decks that work without a connection.'],
+    metrics:[{v:'10+',l:'Features'},{v:'3',l:'Formats'},{v:'HNSW',l:'Vector Index'},{v:'SSE',l:'Streaming'}]
+  },
+  labellens:{
+    order:1,
+    eyebrow:'02 · Featured Project · Mobile + AI',
+    title:'LabelLens',
+    impact:'AI Product Safety Analyzer',
+    desc:'A Flutter mobile app that scans product ingredient labels using OCR and AI, delivering personalized real-time safety scores — 90%+ extraction accuracy and sub-3-second end-to-end analysis.',
+    pills:[{k:'Stack',v:'Flutter · FastAPI · Supabase'},{k:'AI Layer',v:'OCR · LLM Classification'},{k:'Platform',v:'iOS · Android'},{k:'Accuracy',v:'90%+ extraction'}],
+    gh:'https://github.com/tanisha-shah',
+    live:null,
+    visual:'<div style="width:100%;height:100%;background:linear-gradient(135deg,#0d2a1a,#0f3520,#0a1f12);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden"><div style="position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 40px,rgba(20,184,166,.025) 40px,rgba(20,184,166,.025) 41px)"></div><div style="position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:1.5rem"><div style="font-family:var(--mono);font-size:.6rem;color:rgba(20,184,166,.5);letter-spacing:.15em">SCAN → ANALYZE → PERSONALIZE → SCORE</div><div style="display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap;justify-content:center"><div style="text-align:center"><div style="width:48px;height:48px;border-radius:10px;border:1px solid rgba(20,184,166,.3);background:rgba(20,184,166,.08);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin:0 auto .35rem">📷</div><div style="font-family:var(--mono);font-size:.5rem;color:rgba(255,255,255,.25)">CAMERA</div></div><div style="color:rgba(20,184,166,.4)">→</div><div style="text-align:center"><div style="width:48px;height:48px;border-radius:10px;border:1px solid rgba(91,140,255,.3);background:rgba(91,140,255,.08);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin:0 auto .35rem">🔤</div><div style="font-family:var(--mono);font-size:.5rem;color:rgba(255,255,255,.25)">OCR</div></div><div style="color:rgba(20,184,166,.4)">→</div><div style="text-align:center"><div style="width:48px;height:48px;border-radius:10px;border:1px solid rgba(139,92,246,.3);background:rgba(139,92,246,.08);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin:0 auto .35rem">🧬</div><div style="font-family:var(--mono);font-size:.5rem;color:rgba(255,255,255,.25)">CLASSIFY</div></div><div style="color:rgba(20,184,166,.4)">→</div><div style="text-align:center"><div style="width:48px;height:48px;border-radius:10px;border:1px solid rgba(20,184,166,.3);background:rgba(20,184,166,.08);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin:0 auto .35rem">✅</div><div style="font-family:var(--mono);font-size:.5rem;color:rgba(255,255,255,.25)">SCORE</div></div></div><div style="display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center"><div style="padding:.2rem .6rem;background:rgba(20,184,166,.1);border:1px solid rgba(20,184,166,.2);border-radius:4px;font-family:var(--mono);font-size:.55rem;color:var(--teal)">90%+ ACCURACY</div><div style="padding:.2rem .6rem;background:rgba(91,140,255,.1);border:1px solid rgba(91,140,255,.2);border-radius:4px;font-family:var(--mono);font-size:.55rem;color:var(--accent)">&lt;3s END-TO-END</div></div></div></div>',
+    stack:['Flutter','Dart','FastAPI','Supabase','Firebase','OCR','WatermelonDB','Render','Python'],
+    problem:'Most people scan product labels without understanding whether an ingredient is safe for them specifically. Someone with a nut allergy, a pregnant user, or a parent checking a product for an infant all have entirely different risk profiles — yet they\'re all staring at the same ingredient list without personalized guidance. LabelLens bridges that gap: point your camera at any product and receive a safety score calibrated to your individual health profile.',
+    features:['Live OCR Scanning — camera-based ingredient extraction achieving 90%+ structured extraction accuracy across varied label formats and print quality.','Personalization Engine — rule-based override system reclassifies ingredient risk for 5+ health factors: allergies, pregnancy, baby mode, dietary restrictions, and custom flags.','Sub-3s Analysis — end-to-end pipeline from scan to score completes in under 3 seconds via an optimized FastAPI backend on Render.','Multilingual Voice Interaction — text-to-speech and speech recognition allow hands-free interaction with results, improving accessibility.','Alternative Recommendations — when a product fails safety checks, the app surfaces safer alternatives from a curated product database.','Offline Profile Caching — user health profiles cached locally via WatermelonDB so the personalization engine works without a network connection.'],
+    challenges:[{t:'OCR reliability on varied label formats',b:'Ingredient lists appear in fonts ranging from 6pt italic to embossed text on glossy packaging. Preprocessing with image sharpening, contrast normalization, and adaptive thresholding lifted extraction accuracy from ~70% to 90%+.'},{t:'Personalization without false confidence',b:'A naive risk classifier would flag every unknown ingredient as dangerous. The engine uses a three-tier classification: confirmed safe, confirmed unsafe, and flagged-for-review — with the review tier surfaced clearly to the user rather than hidden behind a single score.'},{t:'Performance on low-end Android devices',b:'Flutter\'s image processing pipeline is CPU-heavy. Image compression before upload and aggressive caching of classification results for repeat ingredients kept analysis time under 3 seconds on mid-range hardware.'}],
+    learnings:['Preprocessing quality matters more than OCR model choice — a better preprocessing pipeline beats a better model on the same raw input.','Personalization engines must surface uncertainty, not hide it — trust requires transparency.','WatermelonDB\'s local-first architecture is the right abstraction for health data that must work offline.','Mobile AI apps need graceful degradation when the backend is slow or unreachable.'],
+    future:['Barcode scanning integration to retrieve full ingredient lists from a product database, bypassing OCR for known products.','Community-sourced product ratings to surface crowd-verified safety signals alongside AI analysis.','Expand personalization to environmental factors: vegan, cruelty-free, palm-oil-free, etc.'],
+    metrics:[{v:'90%+',l:'OCR Accuracy'},{v:'<3s',l:'Analysis Time'},{v:'5+',l:'Health Factors'},{v:'100%',l:'Users Profiled'}]
+  },
+  federated:{
+    order:2,
+    eyebrow:'03 · Research Project · Federated Learning · Computer Vision',
+    title:'AgrifoldVGG',
+    impact:'Federated Soybean Disease Detection · 97.38% Accuracy',
+    desc:'A federated learning framework for agricultural disease detection — training a custom VGG16 + ECA architecture across distributed clients without ever centralizing farm data. Achieves industry-leading accuracy on extreme non-IID distributions using SCAFFOLD.',
+    pills:[{k:'Accuracy',v:'97.38% Test'},{k:'F1 Score',v:'0.974 Macro'},{k:'Dataset',v:'8,600+ images'},{k:'Algorithm',v:'SCAFFOLD'},{k:'Status',v:'Active Research · Feb 2026–'}],
+    gh:'https://github.com/tanisha-shah',
+    live:null,
+    visual:'<div style="width:100%;height:100%;background:linear-gradient(135deg,#0a1a2a,#0f2535,#071525);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden"><div style="position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 40px,rgba(91,140,255,.02) 40px,rgba(91,140,255,.02) 41px)"></div><div style="position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:1.5rem"><div style="font-family:var(--mono);font-size:.6rem;color:rgba(91,140,255,.4);letter-spacing:.15em">AGRIFOLDVGG · FEDERATED NETWORK</div><div style="display:flex;flex-direction:column;align-items:center;gap:.85rem"><div style="display:flex;gap:1.25rem"><div style="text-align:center"><div style="width:44px;height:44px;border-radius:9px;border:1px solid rgba(91,140,255,.25);background:rgba(91,140,255,.08);display:flex;align-items:center;justify-content:center;font-size:1.1rem;margin:0 auto .3rem">🌿</div><div style="font-family:var(--mono);font-size:.48rem;color:rgba(255,255,255,.22)">CLIENT 1</div></div><div style="text-align:center"><div style="width:44px;height:44px;border-radius:9px;border:1px solid rgba(139,92,246,.25);background:rgba(139,92,246,.08);display:flex;align-items:center;justify-content:center;font-size:1.1rem;margin:0 auto .3rem">🌿</div><div style="font-family:var(--mono);font-size:.48rem;color:rgba(255,255,255,.22)">CLIENT 2</div></div><div style="text-align:center"><div style="width:44px;height:44px;border-radius:9px;border:1px solid rgba(20,184,166,.25);background:rgba(20,184,166,.08);display:flex;align-items:center;justify-content:center;font-size:1.1rem;margin:0 auto .3rem">🌿</div><div style="font-family:var(--mono);font-size:.48rem;color:rgba(255,255,255,.22)">CLIENT 3</div></div></div><div style="font-family:var(--mono);font-size:.52rem;color:rgba(255,255,255,.18)">↓ SCAFFOLD control variates ↓</div><div style="text-align:center"><div style="width:52px;height:52px;border-radius:12px;border:1px solid rgba(20,184,166,.4);background:rgba(20,184,166,.1);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin:0 auto .4rem;box-shadow:0 0 18px rgba(20,184,166,.1)">🧬</div><div style="font-family:var(--mono);font-size:.48rem;color:rgba(255,255,255,.28)">GLOBAL MODEL</div></div><div style="padding:.28rem .9rem;background:rgba(20,184,166,.1);border:1px solid rgba(20,184,166,.25);border-radius:6px;font-family:var(--mono);font-size:.58rem;color:var(--teal)">97.38% ACCURACY · 0.974 MACRO F1</div></div></div></div>',
+    stack:['Python','PyTorch','OpenCV','SAM','VGG16','ECA Modules','SCAFFOLD','NumPy','Scikit-Learn','Matplotlib'],
+    problem:'Traditional deep learning for crop disease detection requires collecting thousands of leaf images into a central server — raising serious data sovereignty concerns for small-scale farmers. Federated learning offers an alternative: train across distributed client devices without data leaving the source. But standard algorithms like FedAvg struggle on non-IID data — where different clients hold different class distributions, as different farms naturally would. AgrifoldVGG addresses this directly.',
+    features:['VGG16 backbone — pre-trained ImageNet weights provide robust feature extraction; top layers replaced for disease-specific classification.','1D Efficient Channel Attention (ECA) modules — injected after each VGG block to recalibrate channel-wise responses, focusing on disease-specific textures while suppressing background noise.','SCAFFOLD aggregation — replaces naive gradient averaging with control variates that correct for client drift on extreme non-IID splits.','SAM-based segmentation pipeline — Segment Anything Model applied to isolate leaf regions from background before feature extraction.','Automated augmentation pipeline — affine rotations, color jittering, applied consistently across clients to prevent data leakage through augmentation artifacts.','Evaluation dashboard — custom frontend visualizations parsing round logs into F1 convergence curves and per-class radar charts.'],
+    challenges:[{t:'Client drift on extreme non-IID splits',b:'With Dirichlet α=0.5, some clients see only 2–3 disease classes while others see all 9. FedAvg\'s global model diverged badly. SCAFFOLD\'s control variates corrected for this — but tuning the correction magnitude required significant empirical experimentation.'},{t:'Integrating ECA into VGG16 without destabilizing pretraining',b:'Naively inserting attention modules after frozen VGG blocks caused training instability. Solution: a phased training regime — freeze VGG layers for the first 10 rounds to stabilize ECA, then unfreeze top 3 VGG blocks for joint fine-tuning.'},{t:'Federated evaluation dashboard',b:'Standard ML dashboards assume centralized training logs. Federated rounds produce per-client metrics that must be aggregated across rounds. Engineered custom visualizations parsing JSON round logs into convergence curves and radar charts.'}],
+    learnings:['Non-IID data is the central challenge in federated learning — algorithm choice matters less than how you handle data heterogeneity.','Attention mechanisms are underutilized in agricultural CV — ECA module recalibration was the single biggest accuracy jump in ablation experiments.','Federated training evaluation requires a fundamentally different mindset — per-round, per-client metrics are the meaningful unit.','SAM-based segmentation is expensive but worth it — leaf/background isolation meaningfully improved convergence speed.'],
+    future:['Real-world deployment on edge devices (Raspberry Pi, Jetson Nano) to validate latency under actual federated conditions.','Differential privacy integration — formal privacy guarantees via gradient noise injection.','Expand to multi-crop detection: wheat, corn, rice — testing generalization of AgrifoldVGG beyond soybeans.','Preparing findings for submission to an agricultural AI or federated learning venue.'],
+    metrics:[{v:'97.38%',l:'Test Accuracy'},{v:'0.974',l:'Macro F1'},{v:'8,600+',l:'Images'},{v:'9',l:'Disease Classes'}]
+  },
+  careerlens:{
+    order:3,
+    eyebrow:'04 · Featured Project · Data Analytics + Full Stack',
+    title:'CareerLens',
+    impact:'Data-Driven Workforce Analytics Platform',
+    desc:'A full-stack analytics platform visualizing how AI is reshaping labor markets — with live job demand tracking, skill trend analysis, and an early-warning algorithm for surfacing talent gaps.',
+    pills:[{k:'Stack',v:'React.js · Node.js · PostgreSQL'},{k:'Data',v:'LinkedIn · Naukri scraping'},{k:'Viz',v:'Interactive heatmaps'}],
+    gh:'https://github.com/tanisha-shah',
+    live:null,
+    visual:'<div style="width:100%;height:100%;background:linear-gradient(135deg,#1a0d2a,#220f35,#150a20);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden"><div style="position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 40px,rgba(139,92,246,.02) 40px,rgba(139,92,246,.02) 41px)"></div><div style="position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:1.5rem"><div style="font-family:var(--mono);font-size:.6rem;color:rgba(139,92,246,.5);letter-spacing:.15em">LIVE LABOR MARKET INTELLIGENCE</div><div style="display:flex;align-items:flex-end;gap:.35rem;height:60px"><div style="width:13px;height:42%;background:rgba(139,92,246,.4);border-radius:2px 2px 0 0"></div><div style="width:13px;height:68%;background:rgba(139,92,246,.5);border-radius:2px 2px 0 0"></div><div style="width:13px;height:28%;background:rgba(139,92,246,.3);border-radius:2px 2px 0 0"></div><div style="width:13px;height:100%;background:rgba(91,140,255,.65);border-radius:2px 2px 0 0"></div><div style="width:13px;height:55%;background:rgba(91,140,255,.35);border-radius:2px 2px 0 0"></div><div style="width:13px;height:80%;background:rgba(20,184,166,.55);border-radius:2px 2px 0 0"></div><div style="width:13px;height:45%;background:rgba(20,184,166,.3);border-radius:2px 2px 0 0"></div></div><div style="display:flex;gap:.65rem;flex-wrap:wrap;justify-content:center"><div style="padding:.22rem .6rem;background:rgba(139,92,246,.1);border:1px solid rgba(139,92,246,.2);border-radius:4px;font-family:var(--mono);font-size:.52rem;color:var(--accent2)">SKILL TRENDS</div><div style="padding:.22rem .6rem;background:rgba(91,140,255,.1);border:1px solid rgba(91,140,255,.2);border-radius:4px;font-family:var(--mono);font-size:.52rem;color:var(--accent)">JOB DEMAND</div><div style="padding:.22rem .6rem;background:rgba(20,184,166,.1);border:1px solid rgba(20,184,166,.2);border-radius:4px;font-family:var(--mono);font-size:.52rem;color:var(--teal)">EARLY WARNINGS</div></div></div></div>',
+    stack:['React.js','Node.js','PostgreSQL','Python','D3.js','BeautifulSoup','Express.js'],
+    problem:'Job seekers, educators, and policymakers lack real-time visibility into how AI is changing which skills are in demand, which roles are declining, and where talent gaps are emerging. Static annual reports are too slow. Raw job board data is too noisy. CareerLens sits between raw data and insight — scraping live job postings, processing skill frequency signals, and surfacing early warnings before trend reversals become crises.',
+    features:['Live scraping pipeline — Python scraper collects job postings from LinkedIn and Naukri on a scheduled basis, normalizing skill tags across different posting formats into a unified taxonomy.','Interactive heatmap — geographic and sector-level visualization of skill demand density, built with React and a D3-powered heatmap component.','Early-warning algorithm — detects statistically significant drops in posting frequency for specific skill clusters, flagging roles at risk before they fall off entirely.','Trend comparisons — side-by-side skill demand curves showing how AI-adjacent skills are growing relative to traditional IT roles.','PostgreSQL analytics layer — aggregated skill frequency data stored with temporal indexing for fast historical queries and trend computation.'],
+    challenges:[{t:'Normalizing skill tags across job boards',b:'LinkedIn posts "Machine Learning" while Naukri posts "ML/AI" and "Deep Learning". Built a fuzzy-matching taxonomy mapper that collapses variants into canonical skill IDs, with manual overrides for ambiguous cases.'},{t:'Defining a meaningful early-warning signal',b:'A single week of low posting volume isn\'t a signal — it might be a holiday. The early-warning algorithm uses a rolling 8-week Z-score on posting frequency; roles only enter warning state when the Z-score drops below -1.5 for 3 consecutive weeks.'}],
+    learnings:['Data normalization is 80% of the work in any analytics pipeline — the visualization is the easy part.','Statistical signals need context windows, not point-in-time values — trend analysis requires temporal indexing from day one.','D3 and React integration requires careful reconciliation of React\'s virtual DOM with D3\'s imperative DOM manipulation.'],
+    future:['Salary trend correlation — link skill demand signals to compensation data for each skill cluster.','Personalized career path recommendations based on current skill set vs. trending demand.','API endpoint for researchers and educators to query skill trend data programmatically.'],
+    metrics:[{v:'Live',l:'Job Tracking'},{v:'2',l:'Platforms'},{v:'8-wk',l:'Signal Window'},{v:'SQL',l:'Temporal Index'}]
+  },
+  medbot:{
+    order:4,
+    eyebrow:'05 · Featured Project · Conversational AI + Public Health',
+    title:'MedBot',
+    impact:'AI-Driven Public Health Chatbot for Rural Communities',
+    desc:'An SMS/USSD conversational AI system that brings symptom prediction and treatment guidance to communities without reliable internet access — built on Rasa NLU with an encrypted backend and big-data outbreak detection.',
+    pills:[{k:'Stack',v:'Rasa · FastAPI · MongoDB'},{k:'Channel',v:'SMS · USSD via Twilio'},{k:'Focus',v:'Rural Healthcare Access'}],
+    gh:'https://github.com/tanisha-shah',
+    live:null,
+    visual:'<div style="width:100%;height:100%;background:linear-gradient(135deg,#2a1a0d,#35200f,#201508);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden"><div style="position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 40px,rgba(255,155,60,.02) 40px,rgba(255,155,60,.02) 41px)"></div><div style="position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:1.5rem"><div style="font-family:var(--mono);font-size:.6rem;color:rgba(255,155,60,.4);letter-spacing:.15em">SMS / USSD → AI TRIAGE → HEALTH GUIDANCE</div><div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap;justify-content:center"><div style="text-align:center"><div style="width:48px;height:48px;border-radius:10px;border:1px solid rgba(255,155,60,.3);background:rgba(255,155,60,.08);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin:0 auto .35rem">📱</div><div style="font-family:var(--mono);font-size:.5rem;color:rgba(255,255,255,.25)">USER</div></div><div style="color:rgba(255,155,60,.4)">→</div><div style="text-align:center"><div style="width:48px;height:48px;border-radius:10px;border:1px solid rgba(255,155,60,.3);background:rgba(255,155,60,.08);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin:0 auto .35rem">📡</div><div style="font-family:var(--mono);font-size:.5rem;color:rgba(255,255,255,.25)">TWILIO</div></div><div style="color:rgba(255,155,60,.4)">→</div><div style="text-align:center"><div style="width:48px;height:48px;border-radius:10px;border:1px solid rgba(91,140,255,.3);background:rgba(91,140,255,.08);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin:0 auto .35rem">🤖</div><div style="font-family:var(--mono);font-size:.5rem;color:rgba(255,255,255,.25)">RASA NLU</div></div><div style="color:rgba(255,155,60,.4)">→</div><div style="text-align:center"><div style="width:48px;height:48px;border-radius:10px;border:1px solid rgba(20,184,166,.3);background:rgba(20,184,166,.08);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin:0 auto .35rem">🏥</div><div style="font-family:var(--mono);font-size:.5rem;color:rgba(255,255,255,.25)">GUIDANCE</div></div></div><div style="font-family:var(--mono);font-size:.58rem;color:rgba(255,255,255,.12)">END-TO-END ENCRYPTED · WORKS ON BASIC PHONES</div></div></div>',
+    stack:['Rasa NLU','Rasa Core','FastAPI','MongoDB','Twilio','Python','Big Data Analytics'],
+    problem:'In rural communities, reliable internet access is inconsistent or absent — yet 2G SMS and USSD connectivity reaches almost everywhere. A symptom-checking tool that only works on smartphones serves exactly the people who already have the most healthcare access. MedBot inverts this: AI-powered symptom prediction over SMS and USSD, channels that work on any phone, anywhere, without mobile data.',
+    features:['SMS & USSD interface — Twilio-powered messaging layer accepting natural language symptom descriptions via SMS and structured menus via USSD, routing both to the same Rasa NLU backend.','Rasa NLU symptom classification — custom trained intent recognition and entity extraction on medical symptom vocabulary, with dialogue management that asks follow-up questions to narrow diagnoses.','Encrypted FastAPI backend — all user interactions stored end-to-end encrypted in MongoDB; no PII retained beyond the session.','Outbreak detection — big-data pattern analysis on anonymized, aggregated query logs detects statistically unusual symptom cluster frequency in specific geographic regions.','Referral guidance — when symptoms exceed confidence threshold for safe remote guidance, the bot directs users to the nearest appropriate healthcare facility.'],
+    challenges:[{t:'Medical NLU on limited training data',b:'"Chest hurts," "tight feeling in my chest," and "pain when I breathe" all describe the same thing. Rasa needed extensive training examples and a fallback intent that gracefully handles out-of-vocabulary symptoms by asking clarifying questions rather than silently misclassifying.'},{t:'USSD session state management',b:'USSD sessions are stateless — each menu interaction arrives as a fresh HTTP request. Implemented a session store in MongoDB keyed on MSISDN and session ID, reconstructing dialogue state on each request.'},{t:'Privacy-preserving outbreak detection',b:'Outbreak detection requires geographic and temporal aggregation, but this must not be linkable to individual users. Applied k-anonymity (k=10) to all geographic-symptom aggregates before analysis.'}],
+    learnings:['Designing for constrained interfaces forces clarity — USSD\'s 182-character limit requires precise, unambiguous menu text.','Privacy-preserving analytics is an engineering discipline — k-anonymity must be baked into the data model, not bolted on post-collection.','Medical AI needs explicit confidence thresholds and graceful fallbacks — overconfident symptom assessment is worse than no assessment.'],
+    future:['Regional language support — Rasa NLU models trained on Hindi, Gujarati, and other regional languages.','Integration with ASHA worker networks — surfacing outbreak alerts directly to frontline community health workers.','Medication interaction checking — extend the dialogue to flag dangerous drug combinations when users describe current medications.'],
+    metrics:[{v:'2G',l:'SMS Works'},{v:'E2E',l:'Encrypted'},{v:'k=10',l:'Anonymity'},{v:'USSD',l:'No Data Needed'}]
+  }
+};
+var ORDER=['cognisync','labellens','federated','careerlens','medbot'];
+var currentProject=null;
+
+function ghIcon(){return '<svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>';}
+
+function renderDetail(key){
+  var p=PROJECTS[key];
+  if(!p)return;
+  var idx=ORDER.indexOf(key);
+  var prev=idx>0?ORDER[idx-1]:null;
+  var next=idx<ORDER.length-1?ORDER[idx+1]:null;
+  var navHTML='';
+  if(prev)navHTML+='<button class="detail-nav-btn" onclick="switchDetail(\''+prev+'\')">← '+PROJECTS[prev].title+'</button>';
+  if(next)navHTML+='<button class="detail-nav-btn" onclick="switchDetail(\''+next+'\')">'+PROJECTS[next].title+' →</button>';
+  document.getElementById('detail-nav').innerHTML=navHTML;
+  var pillsHTML=p.pills.map(function(pl){return '<div class="dp-pill"><strong>'+pl.k+'</strong>&nbsp;'+pl.v+'</div>';}).join('');
+  var actHTML='<a href="'+p.gh+'" target="_blank" class="btn-primary">'+ghIcon()+' View on GitHub</a>';
+  if(p.live)actHTML+='<a href="'+p.live+'" target="_blank" class="btn-secondary">Live Demo ↗</a>';
+  var featHTML=p.features.map(function(f){return '<li>'+f+'</li>';}).join('');
+  var chalHTML=p.challenges.map(function(c){return '<div class="dp-challenge"><div class="dp-challenge-title">'+c.t+'</div><div class="dp-challenge-body">'+c.b+'</div></div>';}).join('');
+  var learnHTML=p.learnings.map(function(l){return '<li>'+l+'</li>';}).join('');
+  var futHTML=p.future.map(function(f){return '<li>'+f+'</li>';}).join('');
+  var stackHTML=p.stack.map(function(s){return '<span class="dp-stack-pill">'+s+'</span>';}).join('');
+  var metHTML=p.metrics.map(function(m){return '<div class="dp-metric"><div class="dp-metric-val">'+m.v+'</div><div class="dp-metric-label">'+m.l+'</div></div>';}).join('');
+
+  document.getElementById('detail-content').innerHTML=
+    '<div class="dp-eyebrow">'+p.eyebrow+'</div>'+
+    '<div class="dp-title">'+p.title+'</div>'+
+    '<div class="dp-impact">'+p.impact+'</div>'+
+    '<p class="dp-desc">'+p.desc+'</p>'+
+    '<div class="dp-meta">'+pillsHTML+'</div>'+
+    '<div class="dp-actions">'+actHTML+'</div>'+
+    '<div class="dp-visual">'+p.visual+'</div>'+
+    '<div class="dp-section"><span class="dp-section-label">The Problem</span><div class="dp-section-title">Why it was built</div><p>'+p.problem+'</p></div>'+
+    '<div class="dp-section"><span class="dp-section-label">Core Features</span><div class="dp-section-title">What it does</div><ul class="dp-features">'+featHTML+'</ul></div>'+
+    '<div class="dp-section"><span class="dp-section-label">System Architecture</span><div class="dp-section-title">How it\'s built</div>'+
+      '<div class="dp-arch"><div style="font-size:2rem">🏗️</div><p>Architecture diagram — upload your system diagram image here to replace this placeholder.</p></div>'+
+    '</div>'+
+    '<div class="dp-section"><span class="dp-section-label">Technical Challenges</span><div class="dp-section-title">What was hard</div>'+chalHTML+'</div>'+
+    (p.metrics?'<div class="dp-section"><span class="dp-section-label">Results</span><div class="dp-section-title">Key metrics</div><div class="dp-metrics">'+metHTML+'</div></div>':'')+
+    '<div class="dp-section"><span class="dp-section-label">Tech Stack</span><div class="dp-section-title">Built with</div><div class="dp-stack" style="margin-top:.5rem">'+stackHTML+'</div></div>'+
+    '<div class="dp-section"><span class="dp-section-label">Learnings</span><div class="dp-section-title">What I took away</div><ul class="dp-learnings">'+learnHTML+'</ul></div>'+
+    '<div class="dp-section"><span class="dp-section-label">Future Scope</span><div class="dp-section-title">Where it goes next</div><ul class="dp-features">'+futHTML+'</ul></div>';
+}
+
+function openDetail(key){
+  currentProject=key;
+  renderDetail(key);
+  var overlay=document.getElementById('detail-overlay');
+  overlay.classList.add('open');
+  document.body.style.overflow='hidden';
+  document.getElementById('detail-panel').scrollTop=0;
+  initReveal();
+}
+
+function switchDetail(key){
+  currentProject=key;
+  renderDetail(key);
+  document.getElementById('detail-panel').scrollTop=0;
+}
+
+function closeDetail(){
+  document.getElementById('detail-overlay').classList.remove('open');
+  document.body.style.overflow='';
+}
+
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeDetail();});
+
+document.addEventListener('DOMContentLoaded',function(){
+  renderThemeIcons();
+  var tb=document.getElementById('theme-toggle');
+  if(tb)tb.addEventListener('click',toggleTheme);
+  initReveal();
+  setTimeout(typeRole,1200);
+});
+</script>
+</body>
+</html>
